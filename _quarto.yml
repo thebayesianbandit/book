@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - gpa_analysis.ipynb
     - summary.qmd
     - references.qmd
 
