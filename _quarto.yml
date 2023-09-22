@@ -1,9 +1,10 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "Mybook"
-  author: "Norah Jones"
+  title: "Classic and Bayesian Statisitcal Methods: An Introduction With Applications in Python"
+  author: "Brandon Scott"
   date: "9/20/2023"
   chapters:
     - index.qmd
@@ -16,7 +17,7 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: lux
   pdf:
     documentclass: scrreprt
 

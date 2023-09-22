@@ -1,0 +1,1024 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Classic and Bayesian Statisitcal Methods: An Introduction With Applications in Python},
+  pdfauthor={Brandon Scott},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Classic and Bayesian Statisitcal Methods: An Introduction With
+Applications in Python}
+\author{Brandon Scott}
+\date{2023-09-20}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit
+\url{https://quarto.org/docs/books}.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+This is a book created from markdown and executable code.
+
+See Knuth (1984) for additional discussion of literate programming.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{simple-linear-regression}{%
+\chapter{Simple Linear Regression}\label{simple-linear-regression}}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+The hope of this analysis is to demonstrate that there is a quantifiable
+relationship between GPA and study hours. We recognize that the
+collected data was self reported and therefore can be dishonest.
+Nonetheless, our goal is to still find a way to quantify a relationship
+between GPA and study hours to:
+
+Gather inference to determine how GPA changes based on increase study
+time
+
+Predict what a student's GPA would be based on study time
+
+Data for this analysis can be found
+\href{https://www.kaggle.com/datasets/joebeachcapital/gpa-study-hours}{here}
+
+\hypertarget{exploratory-data-analysis-eda}{%
+\section{Exploratory Data Analysis
+(EDA)}\label{exploratory-data-analysis-eda}}
+
+\hypertarget{import-data-and-libraries}{%
+\subsection{Import data and libraries}\label{import-data-and-libraries}}
+
+We begin our analysis by importing the following libraries to create
+data visualizations as well as properly format and filter our data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Import libraries}
+\ImportTok{import}\NormalTok{ opendatasets }\ImportTok{as}\NormalTok{ od}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\end{Highlighting}
+\end{Shaded}
+
+We read in our data using pandas and will use the head function to check
+out the data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Check dataframe}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& gpa & study\_hours \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 4.00 & 10.0 \\
+1 & 3.80 & 25.0 \\
+2 & 3.93 & 45.0 \\
+3 & 3.40 & 10.0 \\
+4 & 3.20 & 4.0 \\
+\end{longtable}
+
+The head result indicates that the data has been read in correctly. In
+the next section, we will begin to clean the data.
+
+\hypertarget{data-cleaning}{%
+\subsection{Data Cleaning}\label{data-cleaning}}
+
+We will begin our data cleaning by getting some basic summary statistics
+from the dataframe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Describe dataset}
+\NormalTok{df.describe()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& gpa & study\_hours \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+count & 193.000000 & 193.000000 \\
+mean & 3.586166 & 17.476684 \\
+std & 0.285482 & 11.408980 \\
+min & 2.600000 & 2.000000 \\
+25\% & 3.400000 & 10.000000 \\
+50\% & 3.620000 & 15.000000 \\
+75\% & 3.800000 & 20.000000 \\
+max & 4.300000 & 69.000000 \\
+\end{longtable}
+
+The resulting dataframe shows that we have 193 rows of data where on
+average the gpa is 3.58 with a standard deviation of .28. Average study
+hours show 17.47 and standard deviation of 11.4, meaning we have a large
+spread in the distribution of study hours but not too much in gpa. From
+the summary statistics, we can easily see that the max value is invalid
+as the scale we are using for this analysis is 0-4. We will eliminate
+any rows that fall outside of this range.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Check datatypes}
+\NormalTok{df.dtypes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+gpa            float64
+study_hours    float64
+dtype: object
+\end{verbatim}
+
+Checking the datatypes of each of the columns, we see that each is of
+type float. This confirms that all rows in each column are of the same
+datatype and, in theory, we do not need to clean up any corrupted
+data/poorly entered data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Check for null values}
+\NormalTok{df.isnull().}\BuiltInTok{sum}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+gpa            0
+study_hours    0
+dtype: int64
+\end{verbatim}
+
+In addition, checking for nulls, we see there are none so we do not need
+to do anything with those. In the next code chunk, we will eliminate
+erroneous gpa entries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Convert outlier GPA (erroneous entries) to 4.0}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ df.assign(gpa }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ x: np.where(x.gpa }\OperatorTok{\textgreater{}} \DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, x.gpa))}
+\end{Highlighting}
+\end{Shaded}
+
+In the above chunk, we use the assign function to override the gpa
+column and change values that are above 4 to just 4 while leaving all
+others the same.
+
+\hypertarget{data-viz}{%
+\section{Data Viz}\label{data-viz}}
+
+The first visualization we will look at is comparing the distributions
+of gpa and study hours. We want to get a side by side look so we will
+use the subplots functionality from matplotlib. As well, we will plot
+the median of the two respective distributions to know where the 50\%
+percentile lies. The following code produces Figure~\ref{fig-dist-1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check distributios of gpa and study hours}
+\NormalTok{fig, (ax1, ax2) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, figsize }\OperatorTok{=}\NormalTok{ (}\DecValTok{18}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.histplot(x}\OperatorTok{=}\StringTok{"gpa"}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, ax}\OperatorTok{=}\NormalTok{ax1, bins}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+\NormalTok{ax1.axvline(df.gpa.median(), color}\OperatorTok{=}\StringTok{"black"}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{"dashed"}\NormalTok{)}
+\NormalTok{ax1.text(df.gpa.median() }\OperatorTok{{-}} \FloatTok{0.3}\NormalTok{, ax1.get\_ylim()[}\DecValTok{1}\NormalTok{] }\OperatorTok{*} \FloatTok{0.9}\NormalTok{, }\SpecialStringTok{f"Median: }\SpecialCharTok{\{}\NormalTok{df}\SpecialCharTok{.}\NormalTok{gpa}\SpecialCharTok{.}\NormalTok{median()}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+
+\NormalTok{sns.histplot(x}\OperatorTok{=}\StringTok{"study\_hours"}\NormalTok{, data}\OperatorTok{=}\NormalTok{df, ax}\OperatorTok{=}\NormalTok{ax2, color}\OperatorTok{=}\StringTok{"red"}\NormalTok{, bins}\OperatorTok{=}\DecValTok{15}\NormalTok{)}
+\NormalTok{ax2.axvline(df.study\_hours.median(), color}\OperatorTok{=}\StringTok{"black"}\NormalTok{, linestyle}\OperatorTok{=}\StringTok{"dashed"}\NormalTok{)}
+\NormalTok{ax2.text(df.study\_hours.median() }\OperatorTok{+} \DecValTok{2}\NormalTok{, ax2.get\_ylim()[}\DecValTok{1}\NormalTok{] }\OperatorTok{*} \FloatTok{0.9}\NormalTok{, }\SpecialStringTok{f"Median: }\SpecialCharTok{\{}\NormalTok{df}\SpecialCharTok{.}\NormalTok{study\_hours}\SpecialCharTok{.}\NormalTok{median()}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}\OperatorTok{;}
+
+\CommentTok{\#fig.suptitle("Distributions of GPA and Study Hours");}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-dist-1-output-1.png}
+
+}
+
+\caption{\label{fig-dist-1}Distributions of GPA and Study Hours}
+
+\end{figure}
+
+From Figure~\ref{fig-dist-1}, we see that GPA appears to be slightly
+left skewed with a couple of outliers to the left of the distribution.
+Study hours appears to be more right skewed with more outliers towards
+the right of the distribution. Median for GPA is 3.62 and 15 for study
+hours.
+
+Since we are working with two quantitative variables, we can use a
+scatterplot to view how linear their relationship (ie correlation) as
+well as view the where each gpa falls for a given amount of study hour.
+The below code produces Figure~\ref{fig-scatterplot-1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Scatterplot of gpa and study hours}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.regplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df)}
+\NormalTok{corr\_coef }\OperatorTok{=}\NormalTok{ np.corrcoef(df.study\_hours, df.gpa)[}\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\NormalTok{plt.text(}\DecValTok{50}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\SpecialStringTok{f"Correlation: }\SpecialCharTok{\{}\NormalTok{corr\_coef}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-scatterplot-1-output-1.png}
+
+}
+
+\caption{\label{fig-scatterplot-1}Scatterplot of GPA by Study Hours}
+
+\end{figure}
+
+Figure~\ref{fig-scatterplot-1} shows that the linear relationship
+between study hours and GPA is not very strong. An exact score of .14
+for the correlation indicates a weak linear relationship. Further more,
+like we already saw from the histograms, the data appears to be more
+grouped towards the beginning of the x axis (0-20ish hours).
+
+We can attempt to adjust the distribution and correlation of the dataset
+by removing outliers. However, because the outlying dots appear to
+follow the trend of the data (more or less\ldots) and we always like
+keeping as much data as possible, this is merely an optional step to
+fulfill our curiosity.
+
+We will define an outlier as a point that falls outside of a box-plot
+range. Below is the function we will use to define and identify
+outliers.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Identify outliers}
+\KeywordTok{def}\NormalTok{ find\_outliers(x, column\_name):}
+\NormalTok{    q1 }\OperatorTok{=}\NormalTok{ x[column\_name].quantile(}\FloatTok{.25}\NormalTok{)}
+\NormalTok{    q3 }\OperatorTok{=}\NormalTok{ x[column\_name].quantile(}\FloatTok{.75}\NormalTok{)}
+\NormalTok{    iqr }\OperatorTok{=}\NormalTok{ q3 }\OperatorTok{{-}}\NormalTok{ q1}
+\NormalTok{    lower }\OperatorTok{=}\NormalTok{ q1 }\OperatorTok{{-}}\NormalTok{ (}\FloatTok{1.5} \OperatorTok{*}\NormalTok{ iqr)}
+\NormalTok{    upper }\OperatorTok{=}\NormalTok{ q3 }\OperatorTok{+}\NormalTok{ (}\FloatTok{1.5} \OperatorTok{*}\NormalTok{ iqr)}
+\NormalTok{    outliers }\OperatorTok{=}\NormalTok{ x[(x[column\_name] }\OperatorTok{\textless{}}\NormalTok{ lower) }\OperatorTok{|}\NormalTok{ (x[column\_name] }\OperatorTok{\textgreater{}}\NormalTok{ upper)]}
+    
+    \ControlFlowTok{return}\NormalTok{ outliers}
+    
+\end{Highlighting}
+\end{Shaded}
+
+The function calculates the IQR of the dataset and then returns a
+filtered dataframe based on whether a point passes the upper or lower
+bound of the box-plot. For example, below we see how the function
+identifies outliers using the GPA attribute.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Find outliers for gpa}
+\NormalTok{find\_outliers(df, }\StringTok{"gpa"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& gpa & study\_hours \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+108 & 2.6 & 7.0 \\
+\end{longtable}
+
+Similarily, we can view the outliers for study hours below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Find outliers for study hours}
+\NormalTok{find\_outliers(df, }\StringTok{"study\_hours"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& gpa & study\_hours \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2 & 3.930 & 45.0 \\
+7 & 3.400 & 40.0 \\
+13 & 3.830 & 60.0 \\
+51 & 3.868 & 40.0 \\
+57 & 3.125 & 36.0 \\
+77 & 3.566 & 40.0 \\
+83 & 3.850 & 69.0 \\
+89 & 3.700 & 45.0 \\
+122 & 3.750 & 40.0 \\
+125 & 3.500 & 49.0 \\
+130 & 3.825 & 60.0 \\
+135 & 3.600 & 40.0 \\
+169 & 3.830 & 60.0 \\
+\end{longtable}
+
+Figure~\ref{fig-scatter-outliers} below shows which points are labeled
+as outliers from our scatterplot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Plot original scatterplot}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.regplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df)}
+\NormalTok{corr\_coef }\OperatorTok{=}\NormalTok{ np.corrcoef(df.study\_hours, df.gpa)[}\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\NormalTok{plt.text(}\DecValTok{50}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\SpecialStringTok{f"Correlation: }\SpecialCharTok{\{}\NormalTok{corr\_coef}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+
+\CommentTok{\#Show outliers by study hours (color red)}
+\NormalTok{sns.scatterplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{find\_outliers(df, }\StringTok{"study\_hours"}\NormalTok{), color}\OperatorTok{=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\#Show outliers by gpa (color yellow)}
+\NormalTok{sns.scatterplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{find\_outliers(df, }\StringTok{"gpa"}\NormalTok{), color}\OperatorTok{=}\StringTok{\textquotesingle{}yellow\textquotesingle{}}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-scatter-outliers-output-1.png}
+
+}
+
+\caption{\label{fig-scatter-outliers}Scatterplot of GPA and Study Hours
+(highlighted outliers)}
+
+\end{figure}
+
+As already indicated, the red dots are outliers according to the ``study
+hours'' metric while yellow indicates outlier for ``gpa''. While the red
+dots are technically ``outliers'', they do sort of follow the general
+trend and direction of the data whereas the yellow dot does not. Let's
+try removing the yellow dot to see how it changes the correlation of the
+data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Remove outliers from dataset}
+\NormalTok{df\_filtered }\OperatorTok{=}\NormalTok{ df.query(}\StringTok{"gpa \textgreater{} 2.6"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+After removing the gpa outlier, the scatterplot and corresponding
+correlation are as follows.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Scatterplot of gpa and study hours}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.regplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df\_filtered)}
+\NormalTok{corr\_coef }\OperatorTok{=}\NormalTok{ np.corrcoef(df\_filtered.study\_hours, df\_filtered.gpa)[}\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\NormalTok{plt.text(}\DecValTok{50}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\SpecialStringTok{f"Correlation: }\SpecialCharTok{\{}\NormalTok{corr\_coef}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-scatterplot-2-output-1.png}
+
+}
+
+\caption{\label{fig-scatterplot-2}Scatterplot of GPA by Study Hours
+(filtered)}
+
+\end{figure}
+
+We see that removing the gpa outlier had a minimal effect on the
+correlation (actually slightly decreased) thus ``weakening'' the linear
+relationship of the variables. Perhaps we can try a non-linear
+transformation to aid our non-linear data.
+
+To do this, we will perform a log transformation on both gpa and study
+hours (on our original dataset) and a polynomial transformation on study
+hours. Below is the result of our transformations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Plot log transformed data}
+\NormalTok{fig, (ax1, ax2) }\OperatorTok{=}\NormalTok{ plt.subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, figsize }\OperatorTok{=}\NormalTok{ (}\DecValTok{18}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.regplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{np.log(df), ax}\OperatorTok{=}\NormalTok{ax1)}
+\NormalTok{ax1.set\_xlabel(}\StringTok{"log(study\_hours)"}\NormalTok{)}
+\NormalTok{ax1.set\_ylabel(}\StringTok{"log(gpa)"}\NormalTok{)}
+\NormalTok{corr\_coef }\OperatorTok{=}\NormalTok{ np.corrcoef(df.study\_hours, df.gpa)[}\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\NormalTok{ax1.text(np.log(}\DecValTok{30}\NormalTok{), np.log(}\FloatTok{2.8}\NormalTok{), }\SpecialStringTok{f"Correlation: }\SpecialCharTok{\{}\NormalTok{corr\_coef}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}
+
+\CommentTok{\#Plot polynomial transformed data}
+\NormalTok{df\_poly }\OperatorTok{=}\NormalTok{ df.assign(study\_hours }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ x: x.study\_hours}\OperatorTok{**}\DecValTok{2}\NormalTok{)}
+\NormalTok{sns.regplot(x}\OperatorTok{=}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{, y}\OperatorTok{=}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{, data}\OperatorTok{=}\NormalTok{df\_poly, ax}\OperatorTok{=}\NormalTok{ax2)}
+\NormalTok{ax2.set\_xlabel(}\StringTok{"study\_hours\^{}2"}\NormalTok{)}
+\NormalTok{corr\_coef }\OperatorTok{=}\NormalTok{ np.corrcoef(df.study\_hours, df.gpa)[}\DecValTok{0}\NormalTok{][}\DecValTok{1}\NormalTok{]}
+\NormalTok{ax2.text(}\DecValTok{50}\OperatorTok{**}\DecValTok{2}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\SpecialStringTok{f"Correlation: }\SpecialCharTok{\{}\NormalTok{corr\_coef}\SpecialCharTok{:.2f\}}\SpecialStringTok{"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-transformations-output-1.png}
+
+}
+
+\caption{\label{fig-transformations}Scatterplot of GPA by Study Hours
+(filtered)}
+
+\end{figure}
+
+In Figure~\ref{fig-transformations}, we see that our transformations
+really had not effect on the linear relationship. For the sake of
+getting on with the modeling, we will use our base dataset and interpret
+the model accordingly (barring that the other model assumptions hold).
+
+\hypertarget{classical-modeling}{%
+\section{Classical Modeling}\label{classical-modeling}}
+
+This section will be our first attempt at modeling the data, using
+classical (frequentist) style approaches. Even though this is
+thebayesianbandit, I like providing frequentist approaches as well to
+show the differences and similarities between normal statistical
+modeling (frequentist) and bayesian modeling.
+
+\hypertarget{linear-regression-framework}{%
+\subsection{Linear Regression
+Framework}\label{linear-regression-framework}}
+
+Since we are dealing with ``linear'' data, it would make sense to
+attempt to attempt to fit a linear model to the data. Therefore, we will
+be utilizing a simple linear regression (SLR) model to model the
+relationship between GPA and study hours (per week). Below is the
+equation we will use.
+
+\begin{equation}\protect\hypertarget{eq-linear-model}{}{
+y = X\beta + \epsilon 
+}\label{eq-linear-model}\end{equation}
+\[\epsilon \sim N(\mu, \sigma^2)\]
+
+Equation~\ref{eq-linear-model} models our response variable is equal to
+our matrix of explanatory variables (in this case, just one) multiplied
+(scaled) by a matrix of betas, plus errors (residuals) that are
+distributed normally with mean \(\mu\) and variance \(\sigma^2\)
+
+In linear algebra/matrix notation, it would look something like this.
+
+\begin{equation}\protect\hypertarget{eq-linear-model-matrix}{}{
+\begin{bmatrix}
+y_1 \\
+... \\
+y_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & x_1 \\
+... & ... \\
+1 & x_n \\
+\end{bmatrix}
+\begin{bmatrix}
+\beta_0 \\
+\beta_1
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_1 \\
+... \\
+\epsilon_n 
+\end{bmatrix}
+}\label{eq-linear-model-matrix}\end{equation}
+
+We utilize ordinary least squares (OLS) to estimate our coefficients
+(\(\beta\) values) by minimizing the residual sum of squares (RSS).
+Below are the equations we will use.
+
+\begin{equation}\protect\hypertarget{eq-residual-sum-squares}{}{
+RSS = \epsilon^2_1 + ... + \epsilon^2_n
+}\label{eq-residual-sum-squares}\end{equation}
+
+\begin{equation}\protect\hypertarget{eq-residuals}{}{
+\epsilon = y_i - \hat{y_i}
+}\label{eq-residuals}\end{equation}
+
+\begin{equation}\protect\hypertarget{eq-beta-1}{}{
+\hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}
+}\label{eq-beta-1}\end{equation}
+
+\begin{equation}\protect\hypertarget{eq-beta-0}{}{
+\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}
+}\label{eq-beta-0}\end{equation}
+
+By estimating our coefficients like this, we have a mathematical
+framework of estimating the line of best fit (the average line between
+all data points). This yields are final equation below.
+
+\begin{equation}\protect\hypertarget{eq-linear-hat}{}{
+\hat{y} = X\hat{\beta}
+}\label{eq-linear-hat}\end{equation}
+
+Where \(\hat{y}\) is our ``predicted'' value based off our inputs in the
+matrix of \(X\), scaled/multiplied by \(\hat{\beta}\), our estimated
+coefficients.
+
+\hypertarget{calculate-beta-values-and-interpret-results}{%
+\subsection{Calculate beta values and interpret
+results}\label{calculate-beta-values-and-interpret-results}}
+
+Now that we have our framework by which we will fit our data, we can use
+Python libraries to perform the above calculations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Import statsmod and fit SLR model}
+\ImportTok{import}\NormalTok{ statsmodels.api }\ImportTok{as}\NormalTok{ sm}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}gpa\textquotesingle{}}\NormalTok{]}
+\NormalTok{X }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}\StringTok{\textquotesingle{}intercept\textquotesingle{}}\NormalTok{:np.ones(df.shape[}\DecValTok{0}\NormalTok{]), }\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{:df[}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{]\})}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ sm.OLS(y, X)}
+\NormalTok{results }\OperatorTok{=}\NormalTok{ model.fit()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Print summary from SLR model}
+\NormalTok{results.summary()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &       gpa        & \textbf{  R-squared:         } &     0.019   \\
+\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.014   \\
+\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     3.714   \\
+\textbf{Date:}             & Wed, 06 Sep 2023 & \textbf{  Prob (F-statistic):} &   0.0555    \\
+\textbf{Time:}             &     20:33:28     & \textbf{  Log-Likelihood:    } &   -27.443   \\
+\textbf{No. Observations:} &         193      & \textbf{  AIC:               } &     58.89   \\
+\textbf{Df Residuals:}     &         191      & \textbf{  BIC:               } &     65.41   \\
+\textbf{Df Model:}         &           1      & \textbf{                     } &             \\
+\textbf{Covariance Type:}  &    nonrobust     & \textbf{                     } &             \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                      & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$> |$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\midrule
+\textbf{intercept}    &       3.5249  &        0.037     &    95.292  &         0.000        &        3.452    &        3.598     \\
+\textbf{study\_hours} &       0.0034  &        0.002     &     1.927  &         0.055        &    -8.05e-05    &        0.007     \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lclc}
+\textbf{Omnibus:}       & 10.671 & \textbf{  Durbin-Watson:     } &    2.385  \\
+\textbf{Prob(Omnibus):} &  0.005 & \textbf{  Jarque-Bera (JB):  } &   11.481  \\
+\textbf{Skew:}          & -0.595 & \textbf{  Prob(JB):          } &  0.00321  \\
+\textbf{Kurtosis:}      &  2.897 & \textbf{  Cond. No.          } &     38.3  \\
+\bottomrule
+\end{tabular}
+%\caption{OLS Regression Results}
+\end{center}
+
+Notes: \newline
+ [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+From the summary, we have \(\beta_0\) = 3.5249 and \(\beta_1\) = .0034,
+meaning on average someone who studies 0 hours a week would see a GPA
+value of about 3.5. In addition, on average, for an increase of 1 hour
+in study time, we would see an increase of about .0034 in GPA. This
+isn't too surprising considering the weak linear relationship we
+observed earlier in Figure~\ref{fig-scatterplot-1}. Essentially, if I
+were a student in this class, in order to change a whole letter grade
+(i.e.~go from B to B+) and assuming I was right at B level (3.0), I
+would need to study 88 extra hours. Essentially, this model says that
+you're stuck where you're at.
+
+Nevertheless, we can gain confidence in knowing a couple of things.
+
+The data has a fairly weak linear relationship, so using a linear model
+to fit the data may not tell the most accurate story on how GPA is
+influenced by study hours.
+
+The data could be inaccurate due to self-reporting
+
+\hypertarget{is-study-hours-a-statistically-significant-variable-in-determining-gpa}{%
+\subsection{Is study hours a statistically significant variable in
+determining
+GPA?}\label{is-study-hours-a-statistically-significant-variable-in-determining-gpa}}
+
+To determine the answer to the above question, we pose the following
+hypotheses.
+
+\[
+H_0: \beta_1 = 0
+\] \[
+H_a: \beta_1 \neq 0
+\]
+
+The aim of these hypotheses is to determine whether or not \(\beta_1\)
+on average always has some kind of impact on GPA (whether it is an
+increase or decrease, no one knows in these things). We set our
+\(\alpha\) = .05 to run our hypotheses.
+
+The p-value we obtain from the summary print out indicates that p-value
+\textgreater{} \(\alpha\), so we fail to reject \(H_0\) and conclude
+that there isn't sufficient evidence to reject the null. Essentially, we
+don't have enough statistical evidence from the data to prove that study
+hours, on average, will never have a 0 impact on GPA.
+
+To confirm this notion, we can view the corresponding 95\% confidence
+interval for \(\beta_1\) provided in the summary tab. The values of
+(-.000085, .007) indicate that 0 is included in the interval and
+therefore, the average change on GPA based on study hours can be 0.
+
+\hypertarget{check-assumptions-of-linear-regression-model}{%
+\subsection{Check assumptions of linear regression
+model}\label{check-assumptions-of-linear-regression-model}}
+
+Even though the \(\beta_1\) value proved to not be statistically
+significant (though very close), we should still verify that the
+assumptions of our linear model hold with this data set. The assumptions
+for a linear regression model are listed below.
+
+Linearity
+
+Independence
+
+Normality
+
+Equal Variance
+
+We already verified that there is a weak linear relationship, but still
+a linear relationship since correlation was not 0. Independence is
+verified by the fact that each observation in the study was independent
+of one another, thus making them i.i.d random variables.
+
+For the normality assumption, we can plot a histogram of the residuals
+to check that the residuals are approximately normally distributed.
+Below is the graph.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Plot histogram of residuals}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.histplot(results.resid)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-normality-output-1.png}
+
+}
+
+\caption{\label{fig-normality}Histogram of resiudals}
+
+\end{figure}
+
+As we can see in Figure~\ref{fig-normality}, the distribution looks
+fairly left skewed with a long left tail. For ease of this
+analysis/exercise, we will say this is ``approximately'' normal, but
+this would more than likely fail in the real world.
+
+To verify equal variance, we will view a scatterplot of the fitted vs
+residual values to make sure that there appears to be equal variance
+(good randomness, no trends) in the graph.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Plot scatterplot of fitted vs residuals}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+\NormalTok{sns.scatterplot(x}\OperatorTok{=}\NormalTok{results.fittedvalues,y}\OperatorTok{=}\NormalTok{results.resid)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{gpa_analysis_files/figure-pdf/fig-equal-variance-output-1.png}
+
+}
+
+\caption{\label{fig-equal-variance}Scatterplot of fitted vs residuals}
+
+\end{figure}
+
+In Figure~\ref{fig-equal-variance}, there appears to be no significant
+trends in the data (though it does tend to begin to taper as we increase
+across the x-axis). However, since there is nothing obvious or glaring,
+we can verify this assumption.
+
+\hypertarget{do-students-spend-on-average-9-hours-a-week-studying}{%
+\subsection{Do students spend on average 9 hours a week
+studying?}\label{do-students-spend-on-average-9-hours-a-week-studying}}
+
+From my past university experience, many professors have told me that
+for every 1 hour of lecture, should be 3 hours of study/homework time.
+Assuming this class was a 3 credit hour class, most students should be
+spending about 9 hours studying outside of class. To test this theory,
+we will use a t-test for the following hypotheses.
+
+\[H_0: \mu = 9\] \[H_a: \mu \neq 9\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Perform t{-}test to see if students on average spend 9 hours studying}
+\ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ ttest\_1samp}
+\NormalTok{ttest\_1samp(a}\OperatorTok{=}\NormalTok{df[}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{], popmean}\OperatorTok{=}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+TtestResult(statistic=10.32185697364204, pvalue=3.767865100544389e-20, df=192)
+\end{verbatim}
+
+The above result with a super small p-value (less than \(\alpha\) = .05)
+indicates that we can reject the null hypothesis and conclude that
+students do not study an average of 9 hours for this class. To determine
+what the range of possible average values are, we will calculate a 95\%
+confidence interval below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Calculate 95\% confidence interval}
+\NormalTok{ttest\_1samp(a}\OperatorTok{=}\NormalTok{df[}\StringTok{\textquotesingle{}study\_hours\textquotesingle{}}\NormalTok{], popmean}\OperatorTok{=}\DecValTok{9}\NormalTok{).confidence\_interval()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ConfidenceInterval(low=15.856880282374465, high=19.096487593273206)
+\end{verbatim}
+
+We are 95\% confident that the true average study time spent is between
+15.85 to 19.09 hours. So, on average, students are spending a lot more
+time studying for this class than the hoped benchmark set by this
+university (assuming this university has set the same benchmark as my
+other ones).
+
+\hypertarget{bayesian-modeling}{%
+\section{Bayesian Modeling}\label{bayesian-modeling}}
+
+Finally, getting into the bayesian part of the analysis! As with our
+classical approach, we will layout the framework we will use for this
+section. We will be using the bayesian model (Bayes theorem) shown
+below.
+
+\begin{equation}\protect\hypertarget{eq-bayes-theorem}{}{P(H|\theta) = \frac{P(\theta|H) P(H)}{P(\theta)}}\label{eq-bayes-theorem}\end{equation}
+
+\[H = \text{Our Hypothesis (prior)}\] \[\theta = \text{Our Data}\]
+
+\bookmarksetup{startatroot}
+
+\hypertarget{summary}{%
+\chapter{Summary}\label{summary}}
+
+In summary, this book has no content whatsoever.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-knuth84}{}}%
+Knuth, Donald E. 1984. {``Literate Programming.''} \emph{Comput. J.} 27
+(2): 97--111. \url{https://doi.org/10.1093/comjnl/27.2.97}.
+
+\end{CSLReferences}
+
+
+
+\end{document}
