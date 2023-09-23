@@ -203,7 +203,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Classic and Bayesian Statisitcal Methods: An Introduction With Applications in Python},
+  pdftitle={Classic and Bayesian Statistical Methods: An Introduction With Applications in Python},
   pdfauthor={Brandon Scott},
   colorlinks=true,
   linkcolor={blue},
@@ -212,14 +212,14 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Classic and Bayesian Statisitcal Methods: An Introduction With
+\title{Classic and Bayesian Statistical Methods: An Introduction With
 Applications in Python}
 \author{Brandon Scott}
 \date{2023-09-20}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, frame hidden, enhanced, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -229,11 +229,11 @@ Applications in Python}
 }
 \bookmarksetup{startatroot}
 
-\hypertarget{preface}{%
-\chapter*{Preface}\label{preface}}
-\addcontentsline{toc}{chapter}{Preface}
+\hypertarget{about-the-book}{%
+\chapter*{About the book}\label{about-the-book}}
+\addcontentsline{toc}{chapter}{About the book}
 
-\markboth{Preface}{Preface}
+\markboth{About the book}{About the book}
 
 This is a Quarto book.
 
@@ -242,14 +242,39 @@ To learn more about Quarto books visit
 
 \bookmarksetup{startatroot}
 
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+Statisticians around the world have long debated the usefulness and
+accuracy of statistical methods. One debate that constantly arises in
+this realm is the classic (frequentist) vs bayesian approach. No one is
+safe from choosing a side, yet no one is ever harmed for using one or
+the other. Either side would agree that both approaches are merely
+approximations of reality and neither holds the complete truth. However,
+the difference truly lies in the philosophical approach of the
+individual.
+
+In Classic and Bayesian Statistical Methods, the goal is to educate the
+reader of both approaches in both theory and application. The book
+highlights the importance of understanding the mathematical background
+of each approach and implementing those respective approaches in data
+analysis situations. This book does not attempt to be an in-depth look
+into the nuances of statistical theory. Rather, as the title suggests,
+this is an introductory book to allow readers to gain an appreciation
+and taste for both approaches, their usefulness, their weakness, and
+overall a respect for statistical methods in general.
+
+\part{Chapters}
+
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
 This is a book created from markdown and executable code.
 
 See Knuth (1984) for additional discussion of literate programming.
-
-\bookmarksetup{startatroot}
 
 \hypertarget{simple-linear-regression}{%
 \chapter{Simple Linear Regression}\label{simple-linear-regression}}
@@ -996,14 +1021,10 @@ below.
 
 \[H = \text{Our Hypothesis (prior)}\] \[\theta = \text{Our Data}\]
 
-\bookmarksetup{startatroot}
-
 \hypertarget{summary}{%
 \chapter{Summary}\label{summary}}
 
 In summary, this book has no content whatsoever.
-
-\bookmarksetup{startatroot}
 
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
