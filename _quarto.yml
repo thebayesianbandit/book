@@ -8,16 +8,22 @@ book:
   date: "9/20/2023"
   chapters:
     - index.qmd
-    - intro.qmd
-    - gpa_analysis.ipynb
-    - summary.qmd
-    - references.qmd
-
+    - preface.ipynb
+    - part: "Chapters"
+      chapters:
+        - intro.qmd
+        - gpa_analysis.ipynb
+        - summary.qmd
+        - references.qmd
+  navbar:
+    right:
+      - href: https://thebayesianbandit.com/
+        text: Blog
 bibliography: references.bib
 
 format:
   html:
-    theme: lux
+    theme: darkly
   pdf:
     documentclass: scrreprt
 
