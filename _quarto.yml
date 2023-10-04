@@ -11,7 +11,7 @@ book:
     - preface.ipynb
     - part: "Chapters"
       chapters:
-        - intro.qmd
+        - intro_stats.ipynb
         - gpa_analysis.ipynb
         - summary.qmd
         - references.qmd

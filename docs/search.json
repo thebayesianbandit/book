@@ -4,21 +4,49 @@
     "href": "index.html",
     "title": "Classic and Bayesian Statistical Methods: An Introduction With Applications in Python",
     "section": "",
-    "text": "About the book\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "About the book\nWelcome to the first edition of this book!.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
   },
   {
     "objectID": "preface.html",
     "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "Statisticians around the world have long debated the usefulness and accuracy of statistical methods. One debate that constantly arises in this realm is the classic (frequentist) vs bayesian approach. No one is safe from choosing a side, yet no one is ever harmed for using one or the other. Either side would agree that both approaches are merely approximations of reality and neither holds the complete truth. However, the difference truly lies in the philosophical approach of the individual.\nIn Classic and Bayesian Statistical Methods, the goal is to educate the reader of both approaches in both theory and application. The book highlights the importance of understanding the mathematical background of each approach and implementing those respective approaches in data analysis situations. This book does not attempt to be an in-depth look into the nuances of statistical theory. Rather, as the title suggests, this is an introductory book to allow readers to gain an appreciation and taste for both approaches, their usefulness, their weakness, and overall a respect for statistical methods in general."
+    "text": "Elements of Statistical Learning and Introduction to Statistical Learning are two of the best books for becoming familiar with statistical learning, the math methodologies behind them and practical applications of said methodologies. These books are part of the motivation as to why I chose to write Classic and Bayesian Statistical Methods. There are an abundant of resources for learning statistical theory and practical applications of said theory. However, there are few books (if any that I know of) that cover both classic and bayesian methodologies like how Elements of Statistical Learning and Introduction to Statistical Learning illustrate statistical learning.\nIn Classic and Bayesian Statistical Methods, the goal is to educate the reader of both approaches in both theory and application. The book highlights the importance of understanding the mathematical background of each approach and implementing those respective approaches in data analysis situations. This book does not attempt to be an in-depth look into the nuances of statistical theory. Rather, as the title suggests, this is an introductory book to allow readers to gain an appreciation and taste for both approaches, their usefulness, their weakness, and overall a respect for statistical methods in general.\nIn short, the hope is that this book will be a tool for all statisticians at any level. Whether you are an aspiring statistician in your first year of undergrad, or a seasoned analyst looking to view new ways of analyzing and exploring data, this book aims to be a solid foundation of the possibilities in both classic and bayesian methodologies so that you know how to best tackle your data problems."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "intro_stats.html#statistics-the-liars-math",
+    "href": "intro_stats.html#statistics-the-liars-math",
     "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "section": "Statistics: The Liar’s Math",
+    "text": "Statistics: The Liar’s Math\nWinston Churchill has been credited with saying “The only statistics you can trust are those you falsified yourself” (Centre, n.d.). In many instances, people attribute statistics (and statisticians alike) as numbers twisted and manipulated to fit an agenda. To put it lightly, as the section title suggests, people attribute statistics as a way for liars to justify their conclusions using “scientific” means.\nWhile there is valid proof that statistics have been weaponized in this way in the past (and present, and more than likely in the future), statistical methods are nothing more than tools. Used properly, and the statistical methods can be edifying, enlightening, and useful in solving problems. Used improperly, and you can have a dangerous tool, weaponized by ignorance and stupidity. That is why understanding statistical methods is so important. Statistics, as statistician Shane Reese puts it, is “decision making in the presence of uncertainty” (Gardner 2023)."
+  },
+  {
+    "objectID": "intro_stats.html#inference-the-beauty-behind-the-numbers",
+    "href": "intro_stats.html#inference-the-beauty-behind-the-numbers",
+    "title": "1  Introduction",
+    "section": "Inference: The Beauty Behind the Numbers",
+    "text": "Inference: The Beauty Behind the Numbers\nOne of the most important reasons why we perform statistical calculations is to gather information and arrive at conclusions or obtain answers to questions. Gathering data and observing the relationships between various data points is the art of statistics, or rather, statistical inference is the reason we perform statistical calculations. Consider the realistic but hypothetical scenario where a business is launching a new product and wants to know the most effective way to advertise said product on their website. Collecting data on how users interact with the website and the respective advertisements for the new product allow us insights into the effectiveness of the ads, thus giving us an edge on inferring how a random new website user might interact with the advertisement and subsequently purchase the product.\nAll research questions in the end have one goal: to obtain valid statistical inference on the collected data. Without it, many find it hard to defend claims or push agendas on any solutions they propose. Therefore, the goal of this book is to help readers understand how statistical methodologies, both classic and bayesian, help people gather statistical inference and consequently, arrive at valid conclusions that drive meaningful impact in their respective careers/organizations."
+  },
+  {
+    "objectID": "intro_stats.html#classic-statistical-methods",
+    "href": "intro_stats.html#classic-statistical-methods",
+    "title": "1  Introduction",
+    "section": "Classic Statistical Methods",
+    "text": "Classic Statistical Methods\nClassic statistical methods should be the ones readers are most familiar with (assuming a given reader has taken at least an introductory statistics course). Classic statistical methods are the bread and butter of modern day data analysis and data science. Simple linear regression, analysis of variance, logistic regression, are all implementations of classic statistical methods. These methods are, mathematically speaking, simple to use and calculate, hence their rise in popularity (especially before computers/computing power became widely available). Many may also coin these methods as “frequentist” approaches, due to the philosophy that their is a fixed parameter of interest and the goal is to estimate said parameter from collected data from experiments/research.\nAn example of this would be examining the validity of a coin. You flip the coin X number of times and from the collected data, make conclusions/gather inference on whether or not it is a fair coin based on your experiment. There are several famous examples of classic statistical methods in the real world, such as Garden Pea Experiment by Gregor Mendel. All of these demonstrate the effectiveness of collecting data and performing mathematical calculations on data to arrive at valid statistical conclusions."
+  },
+  {
+    "objectID": "intro_stats.html#bayesian-statistical-methods",
+    "href": "intro_stats.html#bayesian-statistical-methods",
+    "title": "1  Introduction",
+    "section": "Bayesian Statistical Methods",
+    "text": "Bayesian Statistical Methods\nBayesian methods are becoming more popular in the data science age. Bayesian methods take the philosophy that the parameter of interest is a “random” variable, contrasting the idea of a fixed parameter from the classic approach. This provokes the idea that parameters of interest derive from a distribution of values and that a parameter of interest can have probabilites assigned to those distribution values.\nAn example of this philosophy would be a person waiting for the bus. A person may have a notion of when the bus will arrive in some time frame (10-15 minutes) from a given time stamp. This person will generally believe that a bus will more than likely come sooner rather than later based on the time they arrive at the station. This belief of uncertainty and assigning probabilities to arrival times is the essence of bayesian methods. Bayesian methods look for the distribution and uncertainy behind parameters of interest."
+  },
+  {
+    "objectID": "intro_stats.html#what-to-expect-from-the-book",
+    "href": "intro_stats.html#what-to-expect-from-the-book",
+    "title": "1  Introduction",
+    "section": "What to expect from the book",
+    "text": "What to expect from the book\nThis book, as stated in the preface and sporatically in the introduction, aims to inform readers on the usefulness of both classic and bayesian statistical methods in various researchareas. Each chapter, we will cover a popular topic/method in both statistical methods and apply those methods to a dataset. The hope is that by working on a dataset and illustrating the analytical flow of each method, readers will gain a solid understanding of when to use different methods and how to apply them to their own work.\nWe do not expect readers to become experts in any one of these proposed statistical methods nor in any of the discussed topics in this book, just from this book. Rather, as the book title suggests, this book is an introduction to these methods and hopes to spark interest in the reader to pursue further research in any of the methods and topics discussed in this book. There are a plethora of resources available in the statistics and data science community to further knowledge and expertise in any one of the fields. Nonetheless, all learning begins with introductions and basics so we hope that this book will prove to be just that for you as you study this material.\n\n\n\n\nCentre, Churchill. n.d. https://www.causeweb.org/cause/resources/library/r609#:~:text=The%20only%20statistics%20you%20can,Churchill%20(1874%20%2D%201965).\n\n\nGardner, Peter B. 2023. “Meet Shane Reese.” https://magazine.byu.edu/article/outlier/."
   },
   {
     "objectID": "gpa_analysis.html#introduction",
@@ -67,6 +95,6 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "Centre, Churchill. n.d. https://www.causeweb.org/cause/resources/library/r609#:~:text=The%20only%20statistics%20you%20can,Churchill%20(1874%20%2D%201965).\n\n\nGardner, Peter B. 2023. “Meet Shane Reese.” https://magazine.byu.edu/article/outlier/."
   }
 ]

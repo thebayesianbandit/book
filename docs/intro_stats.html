@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Classic and Bayesian Statistical Methods: An Introduction With Applications in Python - 1&nbsp; Introduction</title>
+<title>Classic and Bayesian Statistical Methods: An Introduction With Applications in Python - Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_stats.html">Chapters</a></li><li class="breadcrumb-item"><a href="./intro_stats.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro_stats.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -188,7 +188,17 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#statistics-the-liars-math" id="toc-statistics-the-liars-math" class="nav-link active" data-scroll-target="#statistics-the-liars-math">Statistics: The Liar’s Math</a></li>
+  <li><a href="#inference-the-beauty-behind-the-numbers" id="toc-inference-the-beauty-behind-the-numbers" class="nav-link" data-scroll-target="#inference-the-beauty-behind-the-numbers">Inference: The Beauty Behind the Numbers</a></li>
+  <li><a href="#classic-statistical-methods" id="toc-classic-statistical-methods" class="nav-link" data-scroll-target="#classic-statistical-methods">Classic Statistical Methods</a></li>
+  <li><a href="#bayesian-statistical-methods" id="toc-bayesian-statistical-methods" class="nav-link" data-scroll-target="#bayesian-statistical-methods">Bayesian Statistical Methods</a></li>
+  <li><a href="#what-to-expect-from-the-book" id="toc-what-to-expect-from-the-book" class="nav-link" data-scroll-target="#what-to-expect-from-the-book">What to expect from the book</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,15 +220,41 @@ div.csl-indent {
 
 </header>
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
+<section id="statistics-the-liars-math" class="level2">
+<h2 class="anchored" data-anchor-id="statistics-the-liars-math">Statistics: The Liar’s Math</h2>
+<p>Winston Churchill has been credited with saying “The only statistics you can trust are those you falsified yourself” <span class="citation" data-cites="church1874">(<a href="references.html#ref-church1874" role="doc-biblioref">Centre, n.d.</a>)</span>. In many instances, people attribute statistics (and statisticians alike) as numbers twisted and manipulated to fit an agenda. To put it lightly, as the section title suggests, people attribute statistics as a way for liars to justify their conclusions using “scientific” means.</p>
+<p>While there is valid proof that statistics have been weaponized in this way in the past (and present, and more than likely in the future), statistical methods are nothing more than tools. Used properly, and the statistical methods can be edifying, enlightening, and useful in solving problems. Used improperly, and you can have a dangerous tool, weaponized by ignorance and stupidity. That is why understanding statistical methods is so important. Statistics, as statistician Shane Reese puts it, is “decision making in the presence of uncertainty” <span class="citation" data-cites="byu2023">(<a href="references.html#ref-byu2023" role="doc-biblioref">Gardner 2023</a>)</span>.</p>
+</section>
+<section id="inference-the-beauty-behind-the-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="inference-the-beauty-behind-the-numbers">Inference: The Beauty Behind the Numbers</h2>
+<p>One of the most important reasons why we perform statistical calculations is to gather information and arrive at conclusions or obtain answers to questions. Gathering data and observing the relationships between various data points is the art of statistics, or rather, statistical inference is the reason we perform statistical calculations. Consider the realistic but hypothetical scenario where a business is launching a new product and wants to know the most effective way to advertise said product on their website. Collecting data on how users interact with the website and the respective advertisements for the new product allow us insights into the effectiveness of the ads, thus giving us an edge on inferring how a random new website user might interact with the advertisement and subsequently purchase the product.</p>
+<p>All research questions in the end have one goal: to obtain valid statistical inference on the collected data. Without it, many find it hard to defend claims or push agendas on any solutions they propose. Therefore, the goal of this book is to help readers understand how statistical methodologies, both classic and bayesian, help people gather statistical inference and consequently, arrive at valid conclusions that drive meaningful impact in their respective careers/organizations.</p>
+</section>
+<section id="classic-statistical-methods" class="level2">
+<h2 class="anchored" data-anchor-id="classic-statistical-methods">Classic Statistical Methods</h2>
+<p>Classic statistical methods should be the ones readers are most familiar with (assuming a given reader has taken at least an introductory statistics course). Classic statistical methods are the bread and butter of modern day data analysis and data science. Simple linear regression, analysis of variance, logistic regression, are all implementations of classic statistical methods. These methods are, mathematically speaking, simple to use and calculate, hence their rise in popularity (especially before computers/computing power became widely available). Many may also coin these methods as “frequentist” approaches, due to the philosophy that their is a fixed parameter of interest and the goal is to estimate said parameter from collected data from experiments/research.</p>
+<p>An example of this would be examining the validity of a coin. You flip the coin X number of times and from the collected data, make conclusions/gather inference on whether or not it is a fair coin based on your experiment. There are several famous examples of classic statistical methods in the real world, such as <em>Garden Pea Experiment</em> by Gregor Mendel. All of these demonstrate the effectiveness of collecting data and performing mathematical calculations on data to arrive at valid statistical conclusions.</p>
+</section>
+<section id="bayesian-statistical-methods" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-statistical-methods">Bayesian Statistical Methods</h2>
+<p>Bayesian methods are becoming more popular in the data science age. Bayesian methods take the philosophy that the parameter of interest is a “random” variable, contrasting the idea of a fixed parameter from the classic approach. This provokes the idea that parameters of interest derive from a distribution of values and that a parameter of interest can have probabilites assigned to those distribution values.</p>
+<p>An example of this philosophy would be a person waiting for the bus. A person may have a notion of when the bus will arrive in some time frame (10-15 minutes) from a given time stamp. This person will generally believe that a bus will more than likely come sooner rather than later based on the time they arrive at the station. This belief of uncertainty and assigning probabilities to arrival times is the essence of bayesian methods. Bayesian methods look for the distribution and uncertainy behind parameters of interest.</p>
+</section>
+<section id="what-to-expect-from-the-book" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-expect-from-the-book">What to expect from the book</h2>
+<p>This book, as stated in the preface and sporatically in the introduction, aims to inform readers on the usefulness of both classic and bayesian statistical methods in various researchareas. Each chapter, we will cover a popular topic/method in both statistical methods and apply those methods to a dataset. The hope is that by working on a dataset and illustrating the analytical flow of each method, readers will gain a solid understanding of when to use different methods and how to apply them to their own work.</p>
+<p>We do not expect readers to become experts in any one of these proposed statistical methods nor in any of the discussed topics in this book, just from this book. Rather, as the book title suggests, this book is an introduction to these methods and hopes to spark interest in the reader to pursue further research in any of the methods and topics discussed in this book. There are a plethora of resources available in the statistics and data science community to further knowledge and expertise in any one of the fields. Nonetheless, all learning begins with introductions and basics so we hope that this book will prove to be just that for you as you study this material.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+<div id="ref-church1874" class="csl-entry" role="listitem">
+Centre, Churchill. n.d. <a href="https://www.causeweb.org/cause/resources/library/r609#:~:text=The%20only%20statistics%20you%20can,Churchill%20(1874%20%2D%201965).">https://www.causeweb.org/cause/resources/library/r609#:~:text=The%20only%20statistics%20you%20can,Churchill%20(1874%20%2D%201965).</a>
+</div>
+<div id="ref-byu2023" class="csl-entry" role="listitem">
+Gardner, Peter B. 2023. <span>“Meet Shane Reese.”</span> <a href="https://magazine.byu.edu/article/outlier/">https://magazine.byu.edu/article/outlier/</a>.
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
