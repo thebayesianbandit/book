@@ -219,7 +219,7 @@ Applications in Python}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, frame hidden, enhanced, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -235,7 +235,7 @@ Applications in Python}
 
 \markboth{About the book}{About the book}
 
-This is a Quarto book.
+Welcome to the first edition of this book!.
 
 To learn more about Quarto books visit
 \url{https://quarto.org/docs/books}.
@@ -248,14 +248,16 @@ To learn more about Quarto books visit
 
 \markboth{Preface}{Preface}
 
-Statisticians around the world have long debated the usefulness and
-accuracy of statistical methods. One debate that constantly arises in
-this realm is the classic (frequentist) vs bayesian approach. No one is
-safe from choosing a side, yet no one is ever harmed for using one or
-the other. Either side would agree that both approaches are merely
-approximations of reality and neither holds the complete truth. However,
-the difference truly lies in the philosophical approach of the
-individual.
+Elements of Statistical Learning and Introduction to Statistical
+Learning are two of the best books for becoming familiar with
+statistical learning, the math methodologies behind them and practical
+applications of said methodologies. These books are part of the
+motivation as to why I chose to write Classic and Bayesian Statistical
+Methods. There are an abundant of resources for learning statistical
+theory and practical applications of said theory. However, there are few
+books (if any that I know of) that cover both classic and bayesian
+methodologies like how Elements of Statistical Learning and Introduction
+to Statistical Learning illustrate statistical learning.
 
 In Classic and Bayesian Statistical Methods, the goal is to educate the
 reader of both approaches in both theory and application. The book
@@ -267,31 +269,163 @@ this is an introductory book to allow readers to gain an appreciation
 and taste for both approaches, their usefulness, their weakness, and
 overall a respect for statistical methods in general.
 
+In short, the hope is that this book will be a tool for all
+statisticians at any level. Whether you are an aspiring statistician in
+your first year of undergrad, or a seasoned analyst looking to view new
+ways of analyzing and exploring data, this book aims to be a solid
+foundation of the possibilities in both classic and bayesian
+methodologies so that you know how to best tackle your data problems.
+
 \part{Chapters}
 
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-This is a book created from markdown and executable code.
+\hypertarget{statistics-the-liars-math}{%
+\section{Statistics: The Liar's Math}\label{statistics-the-liars-math}}
 
-See Knuth (1984) for additional discussion of literate programming.
+Winston Churchill has been credited with saying ``The only statistics
+you can trust are those you falsified yourself'' (Centre, n.d.). In many
+instances, people attribute statistics (and statisticians alike) as
+numbers twisted and manipulated to fit an agenda. To put it lightly, as
+the section title suggests, people attribute statistics as a way for
+liars to justify their conclusions using ``scientific'' means.
+
+While there is valid proof that statistics have been weaponized in this
+way in the past (and present, and more than likely in the future),
+statistical methods are nothing more than tools. Used properly, and the
+statistical methods can be edifying, enlightening, and useful in solving
+problems. Used improperly, and you can have a dangerous tool, weaponized
+by ignorance and stupidity. That is why understanding statistical
+methods is so important. Statistics, as statistician Shane Reese puts
+it, is ``decision making in the presence of uncertainty'' (Gardner
+2023).
+
+\hypertarget{inference-the-beauty-behind-the-numbers}{%
+\section{Inference: The Beauty Behind the
+Numbers}\label{inference-the-beauty-behind-the-numbers}}
+
+One of the most important reasons why we perform statistical
+calculations is to gather information and arrive at conclusions or
+obtain answers to questions. Gathering data and observing the
+relationships between various data points is the art of statistics, or
+rather, statistical inference is the reason we perform statistical
+calculations. Consider the realistic but hypothetical scenario where a
+business is launching a new product and wants to know the most effective
+way to advertise said product on their website. Collecting data on how
+users interact with the website and the respective advertisements for
+the new product allow us insights into the effectiveness of the ads,
+thus giving us an edge on inferring how a random new website user might
+interact with the advertisement and subsequently purchase the product.
+
+All research questions in the end have one goal: to obtain valid
+statistical inference on the collected data. Without it, many find it
+hard to defend claims or push agendas on any solutions they propose.
+Therefore, the goal of this book is to help readers understand how
+statistical methodologies, both classic and bayesian, help people gather
+statistical inference and consequently, arrive at valid conclusions that
+drive meaningful impact in their respective careers/organizations.
+
+\hypertarget{classic-statistical-methods}{%
+\section{Classic Statistical
+Methods}\label{classic-statistical-methods}}
+
+Classic statistical methods should be the ones readers are most familiar
+with (assuming a given reader has taken at least an introductory
+statistics course). Classic statistical methods are the bread and butter
+of modern day data analysis and data science. Simple linear regression,
+analysis of variance, logistic regression, are all implementations of
+classic statistical methods. These methods are, mathematically speaking,
+simple to use and calculate, hence their rise in popularity (especially
+before computers/computing power became widely available). Many may also
+coin these methods as ``frequentist'' approaches, due to the philosophy
+that their is a fixed parameter of interest and the goal is to estimate
+said parameter from collected data from experiments/research.
+
+An example of this would be examining the validity of a coin. You flip
+the coin X number of times and from the collected data, make
+conclusions/gather inference on whether or not it is a fair coin based
+on your experiment. There are several famous examples of classic
+statistical methods in the real world, such as Garden Pea Experiment by
+Gregor Mendel. All of these demonstrate the effectiveness of collecting
+data and performing mathematical calculations on data to arrive at valid
+statistical conclusions.
+
+\hypertarget{bayesian-statistical-methods}{%
+\section{Bayesian Statistical
+Methods}\label{bayesian-statistical-methods}}
+
+Bayesian methods are becoming more popular in the data science age.
+Bayesian methods take the philosophy that the parameter of interest is a
+``random'' variable, contrasting the idea of a fixed parameter from the
+classic approach. This provokes the idea that parameters of interest
+derive from a distribution of values and that a parameter of interest
+can have probabilites assigned to those distribution values.
+
+An example of this philosophy would be a person waiting for the bus. A
+person may have a notion of when the bus will arrive in some time frame
+(10-15 minutes) from a given time stamp. This person will generally
+believe that a bus will more than likely come sooner rather than later
+based on the time they arrive at the station. This belief of uncertainty
+and assigning probabilities to arrival times is the essence of bayesian
+methods. Bayesian methods look for the distribution and uncertainy
+behind parameters of interest.
+
+\hypertarget{what-to-expect-from-the-book}{%
+\section{What to expect from the
+book}\label{what-to-expect-from-the-book}}
+
+This book, as stated in the preface and sporatically in the
+introduction, aims to inform readers on the usefulness of both classic
+and bayesian statistical methods in various researchareas. Each chapter,
+we will cover a popular topic/method in both statistical methods and
+apply those methods to a dataset. The hope is that by working on a
+dataset and illustrating the analytical flow of each method, readers
+will gain a solid understanding of when to use different methods and how
+to apply them to their own work.
+
+We do not expect readers to become experts in any one of these proposed
+statistical methods nor in any of the discussed topics in this book,
+just from this book. Rather, as the book title suggests, this book is an
+introduction to these methods and hopes to spark interest in the reader
+to pursue further research in any of the methods and topics discussed in
+this book. There are a plethora of resources available in the statistics
+and data science community to further knowledge and expertise in any one
+of the fields. Nonetheless, all learning begins with introductions and
+basics so we hope that this book will prove to be just that for you as
+you study this material.
 
 \hypertarget{simple-linear-regression}{%
 \chapter{Simple Linear Regression}\label{simple-linear-regression}}
 
+The first method we will discuss is simple linear regression. Simple
+linear regression is a staple of statistics and inference. It is one of
+the most basic but still very useful methods at exploring data and
+gathering inference between two variables of interest, particularly a
+quantitative (continuous) response variable. While some may overlook the
+importance of understanding simple linear regression, this chapter
+serves to be a foundation for the rest of the book as subsequent
+chapters will utilize the foundations established here.
+
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
 
-The hope of this analysis is to demonstrate that there is a quantifiable
-relationship between GPA and study hours. We recognize that the
-collected data was self reported and therefore can be dishonest.
-Nonetheless, our goal is to still find a way to quantify a relationship
-between GPA and study hours to:
+In this chapter, we will utilize a dataset that aims to study the
+effects of study hours on GPA. An annonymized private university in the
+USA collected data from 193 students that self-reported their GPA and
+respective amount of study time spent per week on the class (measured in
+hours). There are several possible research questions that can arise
+from the data, but the hope is to demonstrate that there is some kind of
+valid quantifiable relationship between the amount a student studies in
+the class and the GPA achieved.
 
-Gather inference to determine how GPA changes based on increase study
-time
-
-Predict what a student's GPA would be based on study time
+Our hope would be that there is some sort of ``linear'' relationship
+between study hours and GPA. That is, for a increase in study time,
+there is generally an increase in GPA. Later in this chapter, we will
+establish the mathematical framework by which we can (hopefully) prove
+such a relationship. For now, exploration of the data is the first
+important step in our analytical flow as we would like to know what the
+data looks like.
 
 Data for this analysis can be found
 \href{https://www.kaggle.com/datasets/joebeachcapital/gpa-study-hours}{here}
@@ -300,11 +434,13 @@ Data for this analysis can be found
 \section{Exploratory Data Analysis
 (EDA)}\label{exploratory-data-analysis-eda}}
 
-\hypertarget{import-data-and-libraries}{%
-\subsection{Import data and libraries}\label{import-data-and-libraries}}
-
-We begin our analysis by importing the following libraries to create
-data visualizations as well as properly format and filter our data.
+Exploratory data analysis (EDA) is an important step in utilizing
+statistical methods since without it, we wouldn't know what kind of
+methods to apply to the data at hand! By utilizing various visualization
+libraries and numerical summaries, we can properly identify trends in
+the data and correctly apply proper statistical methodologies to achieve
+valid results. To begin, we import various libraries that will be useful
+for our analysis such as pandas, numpy, matplotlib, and seaborn.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -317,61 +453,70 @@ data visualizations as well as properly format and filter our data.
 \end{Highlighting}
 \end{Shaded}
 
-We read in our data using pandas and will use the head function to check
-out the data.
+We begin our analysis by viewing reading our data into a pandas
+dataframe and viewing the first 5 observations by using the head method
+of the dataframe.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Check dataframe}
-\NormalTok{df.head()}
+\NormalTok{df.head().style.}\BuiltInTok{format}\NormalTok{(precision}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
+\caption{}\label{T_832fa}\tabularnewline
 \toprule\noalign{}
-& gpa & study\_hours \\
+~ & gpa & study\_hours \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+~ & gpa & study\_hours \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-0 & 4.00 & 10.0 \\
-1 & 3.80 & 25.0 \\
-2 & 3.93 & 45.0 \\
-3 & 3.40 & 10.0 \\
-4 & 3.20 & 4.0 \\
+0 & 4.000 & 10.000 \\
+1 & 3.800 & 25.000 \\
+2 & 3.930 & 45.000 \\
+3 & 3.400 & 10.000 \\
+4 & 3.200 & 4.000 \\
 \end{longtable}
 
-The head result indicates that the data has been read in correctly. In
-the next section, we will begin to clean the data.
-
-\hypertarget{data-cleaning}{%
-\subsection{Data Cleaning}\label{data-cleaning}}
-
-We will begin our data cleaning by getting some basic summary statistics
-from the dataframe.
+The head result shows that we have two variables organized into columns
+(gpa and study\_hours). Since it would be hard to look at all
+observations of the data at once in their tabular form to identify
+trends, we will use the describe method to see basic summary statistics
+on the data. This is shown in Table~\ref{tbl-describe}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Describe dataset}
-\NormalTok{df.describe()}
+\NormalTok{df.describe().style.}\BuiltInTok{format}\NormalTok{(precision}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{tbl-describe}{}
 \begin{longtable}[]{@{}lll@{}}
+\caption{\label{tbl-describe}Descriptive Summary
+Statistics}\label{T_2a29d}\tabularnewline
 \toprule\noalign{}
-& gpa & study\_hours \\
+~ & gpa & study\_hours \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+~ & gpa & study\_hours \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-count & 193.000000 & 193.000000 \\
-mean & 3.586166 & 17.476684 \\
-std & 0.285482 & 11.408980 \\
-min & 2.600000 & 2.000000 \\
-25\% & 3.400000 & 10.000000 \\
-50\% & 3.620000 & 15.000000 \\
-75\% & 3.800000 & 20.000000 \\
-max & 4.300000 & 69.000000 \\
+count & 193.000 & 193.000 \\
+mean & 3.586 & 17.477 \\
+std & 0.285 & 11.409 \\
+min & 2.600 & 2.000 \\
+25\% & 3.400 & 10.000 \\
+50\% & 3.620 & 15.000 \\
+75\% & 3.800 & 20.000 \\
+max & 4.300 & 69.000 \\
 \end{longtable}
 
 The resulting dataframe shows that we have 193 rows of data where on
@@ -382,40 +527,9 @@ the summary statistics, we can easily see that the max value is invalid
 as the scale we are using for this analysis is 0-4. We will eliminate
 any rows that fall outside of this range.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Check datatypes}
-\NormalTok{df.dtypes}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-gpa            float64
-study_hours    float64
-dtype: object
-\end{verbatim}
-
-Checking the datatypes of each of the columns, we see that each is of
-type float. This confirms that all rows in each column are of the same
-datatype and, in theory, we do not need to clean up any corrupted
-data/poorly entered data.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Check for null values}
-\NormalTok{df.isnull().}\BuiltInTok{sum}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-gpa            0
-study_hours    0
-dtype: int64
-\end{verbatim}
-
-In addition, checking for nulls, we see there are none so we do not need
-to do anything with those. In the next code chunk, we will eliminate
-erroneous gpa entries.
+To do this, we will utilize the assign method in our dataframe and pass
+a lambda function using numpy's where method to filter out any gpa that
+is above the threshold of 4.0.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -424,12 +538,10 @@ erroneous gpa entries.
 \end{Highlighting}
 \end{Shaded}
 
-In the above chunk, we use the assign function to override the gpa
-column and change values that are above 4 to just 4 while leaving all
-others the same.
-
-\hypertarget{data-viz}{%
-\section{Data Viz}\label{data-viz}}
+Now that we have cleaned up our data a bit and have viewed some of the
+high-level numerical summaries of the data, we want to begin viewing the
+data to identify trends and understand the distribution of the data we
+are working with.
 
 The first visualization we will look at is comparing the distributions
 of gpa and study hours. We want to get a side by side look so we will
@@ -467,7 +579,8 @@ From Figure~\ref{fig-dist-1}, we see that GPA appears to be slightly
 left skewed with a couple of outliers to the left of the distribution.
 Study hours appears to be more right skewed with more outliers towards
 the right of the distribution. Median for GPA is 3.62 and 15 for study
-hours.
+hours. Additionally, study hours appears to be bimodal with a large gap
+between the median and 20 hour study mark.
 
 Since we are working with two quantitative variables, we can use a
 scatterplot to view how linear their relationship (ie correlation) as
@@ -534,18 +647,23 @@ identifies outliers using the GPA attribute.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Find outliers for gpa}
-\NormalTok{find\_outliers(df, }\StringTok{"gpa"}\NormalTok{)}
+\NormalTok{find\_outliers(df, }\StringTok{"gpa"}\NormalTok{).style.}\BuiltInTok{format}\NormalTok{(precision}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
+\caption{}\label{T_2e3cc}\tabularnewline
 \toprule\noalign{}
-& gpa & study\_hours \\
+~ & gpa & study\_hours \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+~ & gpa & study\_hours \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-108 & 2.6 & 7.0 \\
+108 & 2.600 & 7.000 \\
 \end{longtable}
 
 Similarily, we can view the outliers for study hours below.
@@ -553,30 +671,35 @@ Similarily, we can view the outliers for study hours below.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Find outliers for study hours}
-\NormalTok{find\_outliers(df, }\StringTok{"study\_hours"}\NormalTok{)}
+\NormalTok{find\_outliers(df, }\StringTok{"study\_hours"}\NormalTok{).style.}\BuiltInTok{format}\NormalTok{(precision}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{longtable}[]{@{}lll@{}}
+\caption{}\label{T_7c3b2}\tabularnewline
 \toprule\noalign{}
-& gpa & study\_hours \\
+~ & gpa & study\_hours \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+~ & gpa & study\_hours \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2 & 3.930 & 45.0 \\
-7 & 3.400 & 40.0 \\
-13 & 3.830 & 60.0 \\
-51 & 3.868 & 40.0 \\
-57 & 3.125 & 36.0 \\
-77 & 3.566 & 40.0 \\
-83 & 3.850 & 69.0 \\
-89 & 3.700 & 45.0 \\
-122 & 3.750 & 40.0 \\
-125 & 3.500 & 49.0 \\
-130 & 3.825 & 60.0 \\
-135 & 3.600 & 40.0 \\
-169 & 3.830 & 60.0 \\
+2 & 3.930 & 45.000 \\
+7 & 3.400 & 40.000 \\
+13 & 3.830 & 60.000 \\
+51 & 3.868 & 40.000 \\
+57 & 3.125 & 36.000 \\
+77 & 3.566 & 40.000 \\
+83 & 3.850 & 69.000 \\
+89 & 3.700 & 45.000 \\
+122 & 3.750 & 40.000 \\
+125 & 3.500 & 49.000 \\
+130 & 3.825 & 60.000 \\
+135 & 3.600 & 40.000 \\
+169 & 3.830 & 60.000 \\
 \end{longtable}
 
 Figure~\ref{fig-scatter-outliers} below shows which points are labeled
@@ -694,61 +817,43 @@ the model accordingly (barring that the other model assumptions hold).
 \hypertarget{classical-modeling}{%
 \section{Classical Modeling}\label{classical-modeling}}
 
-This section will be our first attempt at modeling the data, using
-classical (frequentist) style approaches. Even though this is
-thebayesianbandit, I like providing frequentist approaches as well to
-show the differences and similarities between normal statistical
-modeling (frequentist) and bayesian modeling.
+While the EDA above did not demonstrate a strong linear relationship
+between study hours and GPA, it did show that there was at least some
+kind of linear relationship between the two variables. Therefore, a
+simple linear regression model can still work in this situation.
 
 \hypertarget{linear-regression-framework}{%
 \subsection{Linear Regression
 Framework}\label{linear-regression-framework}}
 
-Since we are dealing with ``linear'' data, it would make sense to
-attempt to attempt to fit a linear model to the data. Therefore, we will
-be utilizing a simple linear regression (SLR) model to model the
-relationship between GPA and study hours (per week). Below is the
-equation we will use.
+A simple linear regression model is a simple model that measures the
+effect of a single predictor on a single quantitative response variable.
+In our analysis, we wish to know the effect study hours have of GPA.
+Since we wish to demonstrate that this relationship is indeed linear, we
+will utilize a linear model found in Equation~\ref{eq-linear-model}.
 
 \begin{equation}\protect\hypertarget{eq-linear-model}{}{
-y = X\beta + \epsilon 
+Y = \beta_0 + \beta_1X
 }\label{eq-linear-model}\end{equation}
-\[\epsilon \sim N(\mu, \sigma^2)\]
 
-Equation~\ref{eq-linear-model} models our response variable is equal to
-our matrix of explanatory variables (in this case, just one) multiplied
-(scaled) by a matrix of betas, plus errors (residuals) that are
-distributed normally with mean \(\mu\) and variance \(\sigma^2\)
+Equation~\ref{eq-linear-model} is the simple linear model we all should
+have learned back in algebra. \(Y\) in this situation is our response
+variable (GPA) being modeled linearly by a predictor \(X\) (study hours)
+multiplied by some slope \(\beta_1\) and incremented by the y intercept
+of the line at \(\beta_0\).
 
-In linear algebra/matrix notation, it would look something like this.
+Our formula in Equation~\ref{eq-linear-model} gives us a good starting
+point on how we can properly quantify the relationship between study
+hours and GPA. We currently do not know the values of \(\beta_0\) and
+\(\beta_1\). To produce these values, we will use a method called
+ordinary least squares (OLS) to estimate these beta values.
 
-\begin{equation}\protect\hypertarget{eq-linear-model-matrix}{}{
-\begin{bmatrix}
-y_1 \\
-... \\
-y_n
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & x_1 \\
-... & ... \\
-1 & x_n \\
-\end{bmatrix}
-\begin{bmatrix}
-\beta_0 \\
-\beta_1
-\end{bmatrix}
-+
-\begin{bmatrix}
-\epsilon_1 \\
-... \\
-\epsilon_n 
-\end{bmatrix}
-}\label{eq-linear-model-matrix}\end{equation}
-
-We utilize ordinary least squares (OLS) to estimate our coefficients
-(\(\beta\) values) by minimizing the residual sum of squares (RSS).
-Below are the equations we will use.
+OLS aims to find a line that minimizes the distance between all points
+and said line. This calculated distances between a given line and the
+data points are called residuals (see Equation~\ref{eq-residuals}). To
+have a more mathematically feasible way of measuring the distance
+between the points and a line, we square the residuals and sum them up,
+which is shown in Equation~\ref{eq-residual-sum-squares}.
 
 \begin{equation}\protect\hypertarget{eq-residual-sum-squares}{}{
 RSS = \epsilon^2_1 + ... + \epsilon^2_n
@@ -758,6 +863,12 @@ RSS = \epsilon^2_1 + ... + \epsilon^2_n
 \epsilon = y_i - \hat{y_i}
 }\label{eq-residuals}\end{equation}
 
+We wish to find a line that minimizes RSS. In calculus, finding minimums
+of functions is found by taking the derivative of the function we wish
+to minimize. In this case, OLS finds the values of \(\beta_0\) and
+\(\beta_1\) that minimizes RSS. Equation~\ref{eq-beta-1} and
+Equation~\ref{eq-beta-0} show the resulting minimized functions.
+
 \begin{equation}\protect\hypertarget{eq-beta-1}{}{
 \hat{\beta_1} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}
 }\label{eq-beta-1}\end{equation}
@@ -766,24 +877,30 @@ RSS = \epsilon^2_1 + ... + \epsilon^2_n
 \hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}
 }\label{eq-beta-0}\end{equation}
 
-By estimating our coefficients like this, we have a mathematical
-framework of estimating the line of best fit (the average line between
-all data points). This yields are final equation below.
+Essentially, OLS produces the line that runs through the average of the
+data (ie the point (\(\bar{x}\), \(\bar{y}\))). This is the line that
+minimizes the Equation~\ref{eq-residual-sum-squares}. Because of this
+line and our newly estimated beta values, we can propose our predictive
+equation found in Equation~\ref{eq-linear-hat}
 
 \begin{equation}\protect\hypertarget{eq-linear-hat}{}{
-\hat{y} = X\hat{\beta}
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}x
 }\label{eq-linear-hat}\end{equation}
 
-Where \(\hat{y}\) is our ``predicted'' value based off our inputs in the
-matrix of \(X\), scaled/multiplied by \(\hat{\beta}\), our estimated
-coefficients.
+Equation~\ref{eq-linear-hat} is our predictive equation since we are
+using our estimated betas to estimate our response \(y\) based on some
+predictor value \(x\). It is important to recognize the difference
+between Equation~\ref{eq-linear-hat} and Equation~\ref{eq-linear-model}
+as our predictive one is based on our estimations and
+Equation~\ref{eq-linear-model} is based on our theoretical application.
 
 \hypertarget{calculate-beta-values-and-interpret-results}{%
 \subsection{Calculate beta values and interpret
 results}\label{calculate-beta-values-and-interpret-results}}
 
 Now that we have our framework by which we will fit our data, we can use
-Python libraries to perform the above calculations.
+Python libraries to perform the above calculations. The beta values from
+our model are found in Table~\ref{tbl-beta-estimates}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -796,46 +913,29 @@ Python libraries to perform the above calculations.
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{tbl-beta-estimates}{}
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tbl-beta-estimates}Beta Estimates from
+OLS}\tabularnewline
+\toprule\noalign{}
+Name & Beta Est. & p-value \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Name & Beta Est. & p-value \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+intercept & 3.528 & .000 \\
+study\_hours & .0033 & .065 \\
+\end{longtable}
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Print summary from SLR model}
-\NormalTok{results.summary()}
+\CommentTok{\#\#\# PLACE HOLDER TO CONTINUE WRITING FROM HERE }\AlertTok{\#\#\#}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{center}
-\begin{tabular}{lclc}
-\toprule
-\textbf{Dep. Variable:}    &       gpa        & \textbf{  R-squared:         } &     0.019   \\
-\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.014   \\
-\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     3.714   \\
-\textbf{Date:}             & Wed, 06 Sep 2023 & \textbf{  Prob (F-statistic):} &   0.0555    \\
-\textbf{Time:}             &     20:33:28     & \textbf{  Log-Likelihood:    } &   -27.443   \\
-\textbf{No. Observations:} &         193      & \textbf{  AIC:               } &     58.89   \\
-\textbf{Df Residuals:}     &         191      & \textbf{  BIC:               } &     65.41   \\
-\textbf{Df Model:}         &           1      & \textbf{                     } &             \\
-\textbf{Covariance Type:}  &    nonrobust     & \textbf{                     } &             \\
-\bottomrule
-\end{tabular}
-\begin{tabular}{lcccccc}
-                      & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$> |$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
-\midrule
-\textbf{intercept}    &       3.5249  &        0.037     &    95.292  &         0.000        &        3.452    &        3.598     \\
-\textbf{study\_hours} &       0.0034  &        0.002     &     1.927  &         0.055        &    -8.05e-05    &        0.007     \\
-\bottomrule
-\end{tabular}
-\begin{tabular}{lclc}
-\textbf{Omnibus:}       & 10.671 & \textbf{  Durbin-Watson:     } &    2.385  \\
-\textbf{Prob(Omnibus):} &  0.005 & \textbf{  Jarque-Bera (JB):  } &   11.481  \\
-\textbf{Skew:}          & -0.595 & \textbf{  Prob(JB):          } &  0.00321  \\
-\textbf{Kurtosis:}      &  2.897 & \textbf{  Cond. No.          } &     38.3  \\
-\bottomrule
-\end{tabular}
-%\caption{OLS Regression Results}
-\end{center}
-
-Notes: \newline
- [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
 From the summary, we have \(\beta_0\) = 3.5249 and \(\beta_1\) = .0034,
 meaning on average someone who studies 0 hours a week would see a GPA
@@ -1034,9 +1134,13 @@ In summary, this book has no content whatsoever.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-knuth84}{}}%
-Knuth, Donald E. 1984. {``Literate Programming.''} \emph{Comput. J.} 27
-(2): 97--111. \url{https://doi.org/10.1093/comjnl/27.2.97}.
+\leavevmode\vadjust pre{\hypertarget{ref-church1874}{}}%
+Centre, Churchill. n.d.
+\url{https://www.causeweb.org/cause/resources/library/r609\#:~:text=The\%20only\%20statistics\%20you\%20can,Churchill\%20(1874\%20\%2D\%201965).}
+
+\leavevmode\vadjust pre{\hypertarget{ref-byu2023}{}}%
+Gardner, Peter B. 2023. {``Meet Shane Reese.''}
+\url{https://magazine.byu.edu/article/outlier/}.
 
 \end{CSLReferences}
 

@@ -265,128 +265,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We begin our analysis by viewing reading our data into a pandas dataframe and viewing the first 5 observations by using the head method of the dataframe.</p>
-<div class="cell" data-tags="[]" data-execution_count="4">
+<div class="cell" data-tags="[]" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Check dataframe</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<style type="text/css">
+</style>
 
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table id="T_832fa" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">gpa</th>
-<th data-quarto-table-cell-role="th">study_hours</th>
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_832fa_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">gpa</th>
+<th id="T_832fa_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">study_hours</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>4.00</td>
-<td>10.0</td>
+<td id="T_832fa_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_832fa_row0_col0" class="data row0 col0">4.000</td>
+<td id="T_832fa_row0_col1" class="data row0 col1">10.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>3.80</td>
-<td>25.0</td>
+<td id="T_832fa_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_832fa_row1_col0" class="data row1 col0">3.800</td>
+<td id="T_832fa_row1_col1" class="data row1 col1">25.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3.93</td>
-<td>45.0</td>
+<td id="T_832fa_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_832fa_row2_col0" class="data row2 col0">3.930</td>
+<td id="T_832fa_row2_col1" class="data row2 col1">45.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>3.40</td>
-<td>10.0</td>
+<td id="T_832fa_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_832fa_row3_col0" class="data row3 col0">3.400</td>
+<td id="T_832fa_row3_col1" class="data row3 col1">10.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>3.20</td>
-<td>4.0</td>
+<td id="T_832fa_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_832fa_row4_col0" class="data row4 col0">3.200</td>
+<td id="T_832fa_row4_col1" class="data row4 col1">4.000</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 <p>The head result shows that we have two variables organized into columns (gpa and study_hours). Since it would be hard to look at all observations of the data at once in their tabular form to identify trends, we will use the describe method to see basic summary statistics on the data. This is shown in <a href="#tbl-describe">Table&nbsp;<span>2.1</span></a></p>
-<div class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Describe dataset</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<div class="cell" data-tags="[]" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.describe().style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<style type="text/css">
 </style>
 
 <div id="tbl-describe" class="anchored">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<caption>Table&nbsp;2.1: Descriptive summary statistics</caption>
+<table id="T_2a29d" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Table&nbsp;2.1: Descriptive Summary Statistics</caption>
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">gpa</th>
-<th data-quarto-table-cell-role="th">study_hours</th>
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_2a29d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">gpa</th>
+<th id="T_2a29d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">study_hours</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">count</td>
-<td>193.000000</td>
-<td>193.000000</td>
+<td id="T_2a29d_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">count</td>
+<td id="T_2a29d_row0_col0" class="data row0 col0">193.000</td>
+<td id="T_2a29d_row0_col1" class="data row0 col1">193.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">mean</td>
-<td>3.586166</td>
-<td>17.476684</td>
+<td id="T_2a29d_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">mean</td>
+<td id="T_2a29d_row1_col0" class="data row1 col0">3.586</td>
+<td id="T_2a29d_row1_col1" class="data row1 col1">17.477</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">std</td>
-<td>0.285482</td>
-<td>11.408980</td>
+<td id="T_2a29d_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">std</td>
+<td id="T_2a29d_row2_col0" class="data row2 col0">0.285</td>
+<td id="T_2a29d_row2_col1" class="data row2 col1">11.409</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">min</td>
-<td>2.600000</td>
-<td>2.000000</td>
+<td id="T_2a29d_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">min</td>
+<td id="T_2a29d_row3_col0" class="data row3 col0">2.600</td>
+<td id="T_2a29d_row3_col1" class="data row3 col1">2.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">25%</td>
-<td>3.400000</td>
-<td>10.000000</td>
+<td id="T_2a29d_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">25%</td>
+<td id="T_2a29d_row4_col0" class="data row4 col0">3.400</td>
+<td id="T_2a29d_row4_col1" class="data row4 col1">10.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">50%</td>
-<td>3.620000</td>
-<td>15.000000</td>
+<td id="T_2a29d_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">50%</td>
+<td id="T_2a29d_row5_col0" class="data row5 col0">3.620</td>
+<td id="T_2a29d_row5_col1" class="data row5 col1">15.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">75%</td>
-<td>3.800000</td>
-<td>20.000000</td>
+<td id="T_2a29d_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">75%</td>
+<td id="T_2a29d_row6_col0" class="data row6 col0">3.800</td>
+<td id="T_2a29d_row6_col1" class="data row6 col1">20.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">max</td>
-<td>4.300000</td>
-<td>69.000000</td>
+<td id="T_2a29d_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">max</td>
+<td id="T_2a29d_row7_col0" class="data row7 col0">4.300</td>
+<td id="T_2a29d_row7_col1" class="data row7 col1">69.000</td>
 </tr>
 </tbody>
 </table>
-</div>
-
 </div>
 </div>
 </div>
@@ -439,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="#fig-scatterplot-1">Figure&nbsp;<span>2.2</span></a> shows that the linear relationship between study hours and GPA is not very strong. An exact score of .14 for the correlation indicates a weak linear relationship. Further more, like we already saw from the histograms, the data appears to be more grouped towards the beginning of the x axis (0-20ish hours).</p>
 <p>We can attempt to adjust the distribution and correlation of the dataset by removing outliers. However, because the outlying dots appear to follow the trend of the data (more or less…) and we always like keeping as much data as possible, this is merely an optional step to fulfill our curiosity.</p>
 <p>We will define an outlier as a point that falls outside of a box-plot range. Below is the function we will use to define and identify outliers.</p>
-<div class="cell" data-tags="[]" data-execution_count="11">
+<div class="cell" data-tags="[]" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Identify outliers</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_outliers(x, column_name):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    q1 <span class="op">=</span> x[column_name].quantile(<span class="fl">.25</span>)</span>
@@ -453,119 +436,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The function calculates the IQR of the dataset and then returns a filtered dataframe based on whether a point passes the upper or lower bound of the box-plot. For example, below we see how the function identifies outliers using the GPA attribute.</p>
-<div class="cell" data-tags="[]" data-execution_count="12">
+<div class="cell" data-tags="[]" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Find outliers for gpa</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>find_outliers(df, <span class="st">"gpa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>find_outliers(df, <span class="st">"gpa"</span>).style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<style type="text/css">
+</style>
 
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table id="T_2e3cc" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">gpa</th>
-<th data-quarto-table-cell-role="th">study_hours</th>
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_2e3cc_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">gpa</th>
+<th id="T_2e3cc_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">study_hours</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">108</td>
-<td>2.6</td>
-<td>7.0</td>
+<td id="T_2e3cc_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">108</td>
+<td id="T_2e3cc_row0_col0" class="data row0 col0">2.600</td>
+<td id="T_2e3cc_row0_col1" class="data row0 col1">7.000</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 <p>Similarily, we can view the outliers for study hours below.</p>
-<div class="cell" data-scrolled="true" data-tags="[]" data-execution_count="13">
+<div class="cell" data-scrolled="true" data-tags="[]" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Find outliers for study hours</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>find_outliers(df, <span class="st">"study_hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>find_outliers(df, <span class="st">"study_hours"</span>).style.<span class="bu">format</span>(precision<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<style type="text/css">
+</style>
 
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table id="T_7c3b2" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">gpa</th>
-<th data-quarto-table-cell-role="th">study_hours</th>
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_7c3b2_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">gpa</th>
+<th id="T_7c3b2_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">study_hours</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3.930</td>
-<td>45.0</td>
+<td id="T_7c3b2_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">2</td>
+<td id="T_7c3b2_row0_col0" class="data row0 col0">3.930</td>
+<td id="T_7c3b2_row0_col1" class="data row0 col1">45.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>3.400</td>
-<td>40.0</td>
+<td id="T_7c3b2_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">7</td>
+<td id="T_7c3b2_row1_col0" class="data row1 col0">3.400</td>
+<td id="T_7c3b2_row1_col1" class="data row1 col1">40.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">13</td>
-<td>3.830</td>
-<td>60.0</td>
+<td id="T_7c3b2_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">13</td>
+<td id="T_7c3b2_row2_col0" class="data row2 col0">3.830</td>
+<td id="T_7c3b2_row2_col1" class="data row2 col1">60.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">51</td>
-<td>3.868</td>
-<td>40.0</td>
+<td id="T_7c3b2_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">51</td>
+<td id="T_7c3b2_row3_col0" class="data row3 col0">3.868</td>
+<td id="T_7c3b2_row3_col1" class="data row3 col1">40.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">57</td>
-<td>3.125</td>
-<td>36.0</td>
+<td id="T_7c3b2_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">57</td>
+<td id="T_7c3b2_row4_col0" class="data row4 col0">3.125</td>
+<td id="T_7c3b2_row4_col1" class="data row4 col1">36.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">77</td>
-<td>3.566</td>
-<td>40.0</td>
+<td id="T_7c3b2_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">77</td>
+<td id="T_7c3b2_row5_col0" class="data row5 col0">3.566</td>
+<td id="T_7c3b2_row5_col1" class="data row5 col1">40.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">83</td>
-<td>3.850</td>
-<td>69.0</td>
+<td id="T_7c3b2_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">83</td>
+<td id="T_7c3b2_row6_col0" class="data row6 col0">3.850</td>
+<td id="T_7c3b2_row6_col1" class="data row6 col1">69.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">89</td>
-<td>3.700</td>
-<td>45.0</td>
+<td id="T_7c3b2_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">89</td>
+<td id="T_7c3b2_row7_col0" class="data row7 col0">3.700</td>
+<td id="T_7c3b2_row7_col1" class="data row7 col1">45.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">122</td>
-<td>3.750</td>
-<td>40.0</td>
+<td id="T_7c3b2_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">122</td>
+<td id="T_7c3b2_row8_col0" class="data row8 col0">3.750</td>
+<td id="T_7c3b2_row8_col1" class="data row8 col1">40.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">125</td>
-<td>3.500</td>
-<td>49.0</td>
+<td id="T_7c3b2_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">125</td>
+<td id="T_7c3b2_row9_col0" class="data row9 col0">3.500</td>
+<td id="T_7c3b2_row9_col1" class="data row9 col1">49.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">130</td>
-<td>3.825</td>
-<td>60.0</td>
+<td id="T_7c3b2_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">130</td>
+<td id="T_7c3b2_row10_col0" class="data row10 col0">3.825</td>
+<td id="T_7c3b2_row10_col1" class="data row10 col1">60.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">135</td>
-<td>3.600</td>
-<td>40.0</td>
+<td id="T_7c3b2_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">135</td>
+<td id="T_7c3b2_row11_col0" class="data row11 col0">3.600</td>
+<td id="T_7c3b2_row11_col1" class="data row11 col1">40.000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">169</td>
-<td>3.830</td>
-<td>60.0</td>
+<td id="T_7c3b2_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">169</td>
+<td id="T_7c3b2_row12_col0" class="data row12 col0">3.830</td>
+<td id="T_7c3b2_row12_col1" class="data row12 col1">60.000</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 <p><a href="#fig-scatter-outliers">Figure&nbsp;<span>2.3</span></a> below shows which points are labeled as outliers from our scatterplot.</p>
@@ -664,150 +643,49 @@ RSS = \epsilon^2_1 + ... + \epsilon^2_n
 <p><span id="eq-beta-0"><span class="math display">\[
 \hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}
 \tag{2.5}\]</span></span></p>
-<div class="cell" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">### PLACE MARKER FOR WHERE TO RESUME WRITING</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>By estimating our coefficients like this, we have a mathematical framework of estimating the line of best fit (the average line between all data points). This yields are final equation below.</p>
+<p>Essentially, OLS produces the line that runs through the average of the data (ie the point (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\bar{y}\)</span>)). This is the line that minimizes the <a href="#eq-residual-sum-squares">Equation&nbsp;<span>2.2</span></a>. Because of this line and our newly estimated beta values, we can propose our predictive equation found in <a href="#eq-linear-hat">Equation&nbsp;<span>2.6</span></a></p>
 <p><span id="eq-linear-hat"><span class="math display">\[
-\hat{y} = X\hat{\beta}
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}x
 \tag{2.6}\]</span></span></p>
-<p>Where <span class="math inline">\(\hat{y}\)</span> is our “predicted” value based off our inputs in the matrix of <span class="math inline">\(X\)</span>, scaled/multiplied by <span class="math inline">\(\hat{\beta}\)</span>, our estimated coefficients.</p>
+<p><a href="#eq-linear-hat">Equation&nbsp;<span>2.6</span></a> is our predictive equation since we are using our estimated betas to estimate our response <span class="math inline">\(y\)</span> based on some predictor value <span class="math inline">\(x\)</span>. It is important to recognize the difference between <a href="#eq-linear-hat">Equation&nbsp;<span>2.6</span></a> and <a href="#eq-linear-model">Equation&nbsp;<span>2.1</span></a> as our predictive one is based on our estimations and <a href="#eq-linear-model">Equation&nbsp;<span>2.1</span></a> is based on our theoretical application.</p>
 </section>
 <section id="calculate-beta-values-and-interpret-results" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="calculate-beta-values-and-interpret-results"><span class="header-section-number">2.3.2</span> Calculate beta values and interpret results</h3>
-<p>Now that we have our framework by which we will fit our data, we can use Python libraries to perform the above calculations.</p>
-<div class="cell" data-tags="[]" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Import statsmod and fit SLR model</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'gpa'</span>]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame({<span class="st">'intercept'</span>:np.ones(df.shape[<span class="dv">0</span>]), <span class="st">'study_hours'</span>:df[<span class="st">'study_hours'</span>]})</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> model.fit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now that we have our framework by which we will fit our data, we can use Python libraries to perform the above calculations. The beta values from our model are found in <a href="#tbl-beta-estimates">Table&nbsp;<span>2.2</span></a></p>
+<div class="cell" data-tags="[]" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Import statsmod and fit SLR model</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'gpa'</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame({<span class="st">'intercept'</span>:np.ones(df.shape[<span class="dv">0</span>]), <span class="st">'study_hours'</span>:df[<span class="st">'study_hours'</span>]})</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(y, X)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> model.fit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-scrolled="true" data-tags="[]" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Print summary from SLR model</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>results.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
-<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>OLS Regression Results</caption>
+<div id="tbl-beta-estimates" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2.2: Beta Estimates from OLS</caption>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Beta Est.</th>
+<th>p-value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Dep. Variable:</td>
-<td>gpa</td>
-<td data-quarto-table-cell-role="th">R-squared:</td>
-<td>0.019</td>
+<td>intercept</td>
+<td>3.528</td>
+<td>.000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">Model:</td>
-<td>OLS</td>
-<td data-quarto-table-cell-role="th">Adj. R-squared:</td>
-<td>0.014</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Method:</td>
-<td>Least Squares</td>
-<td data-quarto-table-cell-role="th">F-statistic:</td>
-<td>3.714</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Date:</td>
-<td>Wed, 06 Sep 2023</td>
-<td data-quarto-table-cell-role="th">Prob (F-statistic):</td>
-<td>0.0555</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Time:</td>
-<td>20:33:28</td>
-<td data-quarto-table-cell-role="th">Log-Likelihood:</td>
-<td>-27.443</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">No. Observations:</td>
-<td>193</td>
-<td data-quarto-table-cell-role="th">AIC:</td>
-<td>58.89</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Df Residuals:</td>
-<td>191</td>
-<td data-quarto-table-cell-role="th">BIC:</td>
-<td>65.41</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Df Model:</td>
-<td>1</td>
-<td data-quarto-table-cell-role="th"></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Covariance Type:</td>
-<td>nonrobust</td>
-<td data-quarto-table-cell-role="th"></td>
-<td></td>
+<td>study_hours</td>
+<td>.0033</td>
+<td>.065</td>
 </tr>
 </tbody>
 </table>
-<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td></td>
-<td data-quarto-table-cell-role="th">coef</td>
-<td data-quarto-table-cell-role="th">std err</td>
-<td data-quarto-table-cell-role="th">t</td>
-<td data-quarto-table-cell-role="th">P&gt;|t|</td>
-<td data-quarto-table-cell-role="th">[0.025</td>
-<td data-quarto-table-cell-role="th">0.975]</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">intercept</td>
-<td>3.5249</td>
-<td>0.037</td>
-<td>95.292</td>
-<td>0.000</td>
-<td>3.452</td>
-<td>3.598</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">study_hours</td>
-<td>0.0034</td>
-<td>0.002</td>
-<td>1.927</td>
-<td>0.055</td>
-<td>-8.05e-05</td>
-<td>0.007</td>
-</tr>
-</tbody>
-</table>
-<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Omnibus:</td>
-<td>10.671</td>
-<td data-quarto-table-cell-role="th">Durbin-Watson:</td>
-<td>2.385</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Prob(Omnibus):</td>
-<td>0.005</td>
-<td data-quarto-table-cell-role="th">Jarque-Bera (JB):</td>
-<td>11.481</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Skew:</td>
-<td>-0.595</td>
-<td data-quarto-table-cell-role="th">Prob(JB):</td>
-<td>0.00321</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Kurtosis:</td>
-<td>2.897</td>
-<td data-quarto-table-cell-role="th">Cond. No.</td>
-<td>38.3</td>
-</tr>
-</tbody>
-</table>
-<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </div>
+<div class="cell" data-tags="[]" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">### PLACE HOLDER TO CONTINUE WRITING FROM HERE </span><span class="al">###</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>From the summary, we have <span class="math inline">\(\beta_0\)</span> = 3.5249 and <span class="math inline">\(\beta_1\)</span> = .0034, meaning on average someone who studies 0 hours a week would see a GPA value of about 3.5. In addition, on average, for an increase of 1 hour in study time, we would see an increase of about .0034 in GPA. This isn’t too surprising considering the weak linear relationship we observed earlier in <a href="#fig-scatterplot-1">Figure&nbsp;<span>2.2</span></a>. Essentially, if I were a student in this class, in order to change a whole letter grade (i.e.&nbsp;go from B to B+) and assuming I was right at B level (3.0), I would need to study 88 extra hours. Essentially, this model says that you’re stuck where you’re at.</p>
 Nevertheless, we can gain confidence in knowing a couple of things.
@@ -852,9 +730,9 @@ Equal Variance
 <p>We already verified that there is a weak linear relationship, but still a linear relationship since correlation was not 0. Independence is verified by the fact that each observation in the study was independent of one another, thus making them i.i.d random variables.</p>
 <p>For the normality assumption, we can plot a histogram of the residuals to check that the residuals are approximately normally distributed. Below is the graph.</p>
 <div class="cell" data-tags="[]" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot histogram of residuals</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(results.resid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot histogram of residuals</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(results.resid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-normality" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -867,9 +745,9 @@ Equal Variance
 <p>As we can see in <a href="#fig-normality">Figure&nbsp;<span>2.6</span></a>, the distribution looks fairly left skewed with a long left tail. For ease of this analysis/exercise, we will say this is “approximately” normal, but this would more than likely fail in the real world.</p>
 <p>To verify equal variance, we will view a scatterplot of the fitted vs residual values to make sure that there appears to be equal variance (good randomness, no trends) in the graph.</p>
 <div class="cell" data-tags="[]" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot scatterplot of fitted vs residuals</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span>results.fittedvalues,y<span class="op">=</span>results.resid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot scatterplot of fitted vs residuals</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span>results.fittedvalues,y<span class="op">=</span>results.resid)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-equal-variance" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -886,17 +764,17 @@ Equal Variance
 <p>From my past university experience, many professors have told me that for every 1 hour of lecture, should be 3 hours of study/homework time. Assuming this class was a 3 credit hour class, most students should be spending about 9 hours studying outside of class. To test this theory, we will use a t-test for the following hypotheses.</p>
 <p><span class="math display">\[H_0: \mu = 9\]</span> <span class="math display">\[H_a: \mu \neq 9\]</span></p>
 <div class="cell" data-tags="[]" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Perform t-test to see if students on average spend 9 hours studying</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_1samp</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>ttest_1samp(a<span class="op">=</span>df[<span class="st">'study_hours'</span>], popmean<span class="op">=</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Perform t-test to see if students on average spend 9 hours studying</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_1samp</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ttest_1samp(a<span class="op">=</span>df[<span class="st">'study_hours'</span>], popmean<span class="op">=</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>TtestResult(statistic=10.32185697364204, pvalue=3.767865100544389e-20, df=192)</code></pre>
 </div>
 </div>
 <p>The above result with a super small p-value (less than <span class="math inline">\(\alpha\)</span> = .05) indicates that we can reject the null hypothesis and conclude that students do not study an average of 9 hours for this class. To determine what the range of possible average values are, we will calculate a 95% confidence interval below.</p>
 <div class="cell" data-tags="[]" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate 95% confidence interval</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ttest_1samp(a<span class="op">=</span>df[<span class="st">'study_hours'</span>], popmean<span class="op">=</span><span class="dv">9</span>).confidence_interval()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate 95% confidence interval</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ttest_1samp(a<span class="op">=</span>df[<span class="st">'study_hours'</span>], popmean<span class="op">=</span><span class="dv">9</span>).confidence_interval()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>ConfidenceInterval(low=15.856880282374465, high=19.096487593273206)</code></pre>
 </div>
