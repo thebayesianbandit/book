@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#linear-regression-framework" id="toc-linear-regression-framework" class="nav-link" data-scroll-target="#linear-regression-framework"><span class="header-section-number">2.3.1</span> Linear Regression Framework</a></li>
   <li><a href="#calculate-beta-values-and-interpret-results" id="toc-calculate-beta-values-and-interpret-results" class="nav-link" data-scroll-target="#calculate-beta-values-and-interpret-results"><span class="header-section-number">2.3.2</span> Calculate beta values and interpret results</a></li>
-  <li><a href="#is-study-hours-a-statistically-significant-variable-in-determining-gpa" id="toc-is-study-hours-a-statistically-significant-variable-in-determining-gpa" class="nav-link" data-scroll-target="#is-study-hours-a-statistically-significant-variable-in-determining-gpa"><span class="header-section-number">2.3.3</span> Is study hours a statistically significant variable in determining GPA?</a></li>
+  <li><a href="#testing-for-statistically-significant-relationships" id="toc-testing-for-statistically-significant-relationships" class="nav-link" data-scroll-target="#testing-for-statistically-significant-relationships"><span class="header-section-number">2.3.3</span> Testing for statistically significant relationships</a></li>
   <li><a href="#check-assumptions-of-linear-regression-model" id="toc-check-assumptions-of-linear-regression-model" class="nav-link" data-scroll-target="#check-assumptions-of-linear-regression-model"><span class="header-section-number">2.3.4</span> Check assumptions of linear regression model</a></li>
   <li><a href="#do-students-spend-on-average-9-hours-a-week-studying" id="toc-do-students-spend-on-average-9-hours-a-week-studying" class="nav-link" data-scroll-target="#do-students-spend-on-average-9-hours-a-week-studying"><span class="header-section-number">2.3.5</span> Do students spend on average 9 hours a week studying?</a></li>
   </ul></li>
@@ -684,23 +684,21 @@ RSS = \epsilon^2_1 + ... + \epsilon^2_n
 </tbody>
 </table>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">### PLACE HOLDER TO CONTINUE WRITING FROM HERE </span><span class="al">###</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>From the summary, we have <span class="math inline">\(\beta_0\)</span> = 3.5249 and <span class="math inline">\(\beta_1\)</span> = .0034, meaning on average someone who studies 0 hours a week would see a GPA value of about 3.5. In addition, on average, for an increase of 1 hour in study time, we would see an increase of about .0034 in GPA. This isn’t too surprising considering the weak linear relationship we observed earlier in <a href="#fig-scatterplot-1">Figure&nbsp;<span>2.2</span></a>. Essentially, if I were a student in this class, in order to change a whole letter grade (i.e.&nbsp;go from B to B+) and assuming I was right at B level (3.0), I would need to study 88 extra hours. Essentially, this model says that you’re stuck where you’re at.</p>
-Nevertheless, we can gain confidence in knowing a couple of things.
-<ol>
-<li>
-The data has a fairly weak linear relationship, so using a linear model to fit the data may not tell the most accurate story on how GPA is influenced by study hours.
-</li>
-<li>
-The data could be inaccurate due to self-reporting
-</li>
-</ol>
+<p>From the summary, we have <span class="math inline">\(\beta_0\)</span> = 3.528 and <span class="math inline">\(\beta_1\)</span> = .0033, meaning on average someone who studies 0 hours a week would see a GPA value of about 3.5. In addition, on average, for an increase of 1 hour in study time, we would see an increase of about .0034 in GPA. This isn’t too surprising considering the weak linear relationship we observed earlier in <a href="#fig-scatterplot-1">Figure&nbsp;<span>2.2</span></a>. Essentially, if I were a student in this class, in order to change a whole letter grade (i.e.&nbsp;go from B to B+) and assuming I was right at B level (3.0), I would need to study 88 extra hours. Essentially, this model says that you’re stuck where you’re at.</p>
+<p>These estimates in <a href="#tbl-beta-estimates">Table&nbsp;<span>2.2</span></a> illustrate the power but also weaknesses and limitations of simple linear regression. While we have quantified a relationship between GPA and study hours, because of the weak linear relationship between these two variables, the average increase in GPA for a 1 unit increase in study hours is very very small.</p>
 </section>
-<section id="is-study-hours-a-statistically-significant-variable-in-determining-gpa" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="is-study-hours-a-statistically-significant-variable-in-determining-gpa"><span class="header-section-number">2.3.3</span> Is study hours a statistically significant variable in determining GPA?</h3>
-<p>To determine the answer to the above question, we pose the following hypotheses.</p>
+<section id="testing-for-statistically-significant-relationships" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="testing-for-statistically-significant-relationships"><span class="header-section-number">2.3.3</span> Testing for statistically significant relationships</h3>
+<p>While the beta values shown in <a href="#tbl-beta-estimates">Table&nbsp;<span>2.2</span></a> are the results produced from our collected data, the question is how much can we trust the values produced? As we illustrated in <a href="#eq-linear-model">Equation&nbsp;<span>2.1</span></a>, we have a theoretical model where some values of beta equal our response Y. While in theory this may be possible, in the real world, variability occurs and we must account for that in the model. <a href="#eq-linear-variability">Equation&nbsp;<span>2.7</span></a> demonstrates how we account for this variability.</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1X + \epsilon
+\]</span> <span id="eq-linear-variability"><span class="math display">\[
+\epsilon \sim \mathcal{N}(\mu=0, \sigma^2)
+\tag{2.7}\]</span></span></p>
+<p><a href="#eq-linear-variability">Equation&nbsp;<span>2.7</span></a> shows that there is some function that models our response Y, but that there is some kind of variation (randomness) that affect our betas, which need to be corrected by <span class="math inline">\(\epsilon\)</span>. Essentially, <span class="math inline">\(\epsilon\)</span> acts as our “fix all” solution to our model that accounts for the variability in the world.</p>
+<div class="cell" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">### PLACE HOLDER FOR WRITING</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p><span class="math display">\[
 H_0: \beta_1 = 0
 \]</span> <span class="math display">\[
@@ -785,7 +783,7 @@ Equal Variance
 <section id="bayesian-modeling" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="bayesian-modeling"><span class="header-section-number">2.4</span> Bayesian Modeling</h2>
 <p>Finally, getting into the bayesian part of the analysis! As with our classical approach, we will layout the framework we will use for this section. We will be using the bayesian model (Bayes theorem) shown below.</p>
-<p><span id="eq-bayes-theorem"><span class="math display">\[P(H|\theta) = \frac{P(\theta|H) P(H)}{P(\theta)} \tag{2.7}\]</span></span></p>
+<p><span id="eq-bayes-theorem"><span class="math display">\[P(H|\theta) = \frac{P(\theta|H) P(H)}{P(\theta)} \tag{2.8}\]</span></span></p>
 <p><span class="math display">\[H = \text{Our Hypothesis (prior)}\]</span> <span class="math display">\[\theta = \text{Our Data}\]</span></p>
 
 

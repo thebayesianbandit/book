@@ -219,7 +219,7 @@ Applications in Python}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, enhanced, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -931,13 +931,7 @@ intercept & 3.528 & .000 \\
 study\_hours & .0033 & .065 \\
 \end{longtable}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#\#\# PLACE HOLDER TO CONTINUE WRITING FROM HERE }\AlertTok{\#\#\#}
-\end{Highlighting}
-\end{Shaded}
-
-From the summary, we have \(\beta_0\) = 3.5249 and \(\beta_1\) = .0034,
+From the summary, we have \(\beta_0\) = 3.528 and \(\beta_1\) = .0033,
 meaning on average someone who studies 0 hours a week would see a GPA
 value of about 3.5. In addition, on average, for an increase of 1 hour
 in study time, we would see an increase of about .0034 in GPA. This
@@ -948,21 +942,42 @@ were a student in this class, in order to change a whole letter grade
 would need to study 88 extra hours. Essentially, this model says that
 you're stuck where you're at.
 
-Nevertheless, we can gain confidence in knowing a couple of things.
+These estimates in Table~\ref{tbl-beta-estimates} illustrate the power
+but also weaknesses and limitations of simple linear regression. While
+we have quantified a relationship between GPA and study hours, because
+of the weak linear relationship between these two variables, the average
+increase in GPA for a 1 unit increase in study hours is very very small.
 
-The data has a fairly weak linear relationship, so using a linear model
-to fit the data may not tell the most accurate story on how GPA is
-influenced by study hours.
+\hypertarget{testing-for-statistically-significant-relationships}{%
+\subsection{Testing for statistically significant
+relationships}\label{testing-for-statistically-significant-relationships}}
 
-The data could be inaccurate due to self-reporting
+While the beta values shown in Table~\ref{tbl-beta-estimates} are the
+results produced from our collected data, the question is how much can
+we trust the values produced? As we illustrated in
+Equation~\ref{eq-linear-model}, we have a theoretical model where some
+values of beta equal our response Y. While in theory this may be
+possible, in the real world, variability occurs and we must account for
+that in the model. Equation~\ref{eq-linear-variability} demonstrates how
+we account for this variability.
 
-\hypertarget{is-study-hours-a-statistically-significant-variable-in-determining-gpa}{%
-\subsection{Is study hours a statistically significant variable in
-determining
-GPA?}\label{is-study-hours-a-statistically-significant-variable-in-determining-gpa}}
+\[
+Y = \beta_0 + \beta_1X + \epsilon
+\] \begin{equation}\protect\hypertarget{eq-linear-variability}{}{
+\epsilon \sim \mathcal{N}(\mu=0, \sigma^2)
+}\label{eq-linear-variability}\end{equation}
 
-To determine the answer to the above question, we pose the following
-hypotheses.
+Equation~\ref{eq-linear-variability} shows that there is some function
+that models our response Y, but that there is some kind of variation
+(randomness) that affect our betas, which need to be corrected by
+\(\epsilon\). Essentially, \(\epsilon\) acts as our ``fix all'' solution
+to our model that accounts for the variability in the world.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\#\# PLACE HOLDER FOR WRITING}
+\end{Highlighting}
+\end{Shaded}
 
 \[
 H_0: \beta_1 = 0
